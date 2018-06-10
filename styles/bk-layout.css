@@ -1,0 +1,185 @@
+/* Layout */
+
+main {
+	margin: 20px;
+	border-radius: 10px;
+	border-collapse: collapse;
+	background: $color-light-grey;
+	@include box-shadow-raised;
+}
+
+section {
+	
+	padding: 20px 0;
+	
+	// Article
+	
+	article {
+		
+		margin: 0;
+		
+		@include breakpoint('tablet'){
+			padding: 0 20px;
+		}
+
+		@include breakpoint('laptop'){
+			padding: 0 20px;
+		}
+
+		@include breakpoint('tablet-phablet'){
+			padding: 0 20px;
+		}
+
+		@include breakpoint('phone'){
+			padding: 0 20px;
+		}
+		
+		div.title {
+			margin: 10px 0 30px 0;
+		}
+		
+	}
+	
+	// Dividers
+	
+	hr {
+		width: 100%;
+		padding: 0;
+		margin: 20px 0 40px 0;
+		border: none;
+		border-bottom: 1px solid $color-medium-grey;
+		border-collapse: collapse;
+		outline: none;
+	}
+	
+	// Rows & Cols
+	
+	.row {
+		
+		width: 100%;
+		margin: 20px 0;
+		
+		&:after {
+			content: '';
+			clear: both;
+			display: block;
+		}
+		
+		// Column
+		
+		> .col {
+			
+			width: 100%;
+			min-height: 1px;
+			
+			&:after {
+				content: '';
+				clear: both;
+				display: block;
+			}
+			
+			// Sizes
+			
+			// 2 columns
+			
+			&.col-1-2,
+			&.col-2-2 {
+				float: left;
+				width: 50%;
+				&.with-margin {
+					width: 49%;
+					margin-right: 2%;
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}
+			
+			// 4 columns
+			
+			&.col-1-4,
+			&.col-2-4,
+			&.col-3-4,
+			&.col-4-4 {
+				float: left;
+				width: 25%;
+				&.with-margin {
+					width: 23.5%;
+					margin-right: 2%;
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}
+			&.col-2-3-4 {
+				float: left;
+				width: 75%;
+				&.with-margin {
+					width: 70.5%;
+				}
+			}
+			&.col-1-2-3 {
+				float: left;
+				width: 75%;
+				&.with-margin {
+					width: 70.5%;
+					margin-right: 2%;
+				}
+			}
+			@include breakpoint('tablet-phablet') {
+				&.col-1-4,
+				&.col-2-4 {
+					width: 50%;
+					&.with-margin {
+						width: 49%;
+					}
+				}
+				&.col-3-4,
+				&.col-4-4 {
+					width: 50%;
+					&.with-margin {
+						width: 49%;
+					}
+				}
+			}
+			@include breakpoint('phone') {
+				&.col-1-4,
+				&.col-2-4,
+				&.col-3-4,
+				&.col-4-4 {
+					width: 100%;
+					&.with-margin {
+						width: 100%;
+						margin-right: 0;
+					}
+				}
+			}
+				
+			// 6 columns
+			
+			&.col-1-6,
+			&.col-2-6,
+			&.col-3-6,
+			&.col-4-6,
+			&.col-5-6,
+			&.col-6-6 {
+				float: left;
+				width: 16.5%;
+				margin-right: 0.2%;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				&.with-margin {
+					width: 15%;
+					margin-right: 2%;
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+}

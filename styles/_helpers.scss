@@ -1,0 +1,45 @@
+/* Helpers */
+
+.wrapper {
+	width: 100%;
+	max-width: $max-width;
+	margin: 0 auto;
+}
+.shadow-regular {
+	@include box-shadow-raised;
+}
+.shadow-low {
+	@include box-shadow-raised-lower;
+}
+.text-right {
+	text-align: right;
+}
+.center_text {
+	text-align: center;
+}
+.no-shadow {
+	@include no-shadow;
+}
+
+/* jQuery Fixes */
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: none !important;
+	padding: 0 15px !important;
+}
+.ui-tabs .ui-tabs-nav {
+	padding: 0 !important;
+}
+.ui-tabs .ui-tabs-panel {
+	padding: 0 15px 10px 15px !important;
+}
+.ui-tabs {
+	padding: 30px 0 0 0 !important;
+}
+
+// Box for showcasing the vertical menu
+
+.min_height_box {
+	position: relative;
+	min-height: 500px;
+}

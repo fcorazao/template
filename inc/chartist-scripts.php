@@ -1,0 +1,1 @@
+<script src="libs/chartist/chartist.min.js"></script>

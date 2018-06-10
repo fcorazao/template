@@ -1,0 +1,185 @@
+/* Charts */
+
+@each $name, $color in $chart_list {
+	
+	.#{$name} {
+		
+		// Line chart
+		
+		&.line-solid {
+			.ct-line {
+			}
+		}
+		&.line-dashed {
+			.ct-line {
+				stroke-width: 2px;
+				stroke-dasharray: 5px 10px;
+			}
+		}
+		.ct-chart-line {
+			.ct-series-a .ct-line {
+				stroke: lighten($color,12%);
+			}
+			.ct-series-b .ct-line {
+				stroke: lighten($color,5%);
+			}
+			.ct-series-c .ct-line {
+				stroke: $color;
+			}
+			.ct-series-d .ct-line {
+				stroke: darken($color,5%);
+			}
+			.ct-series-e .ct-line {
+				stroke: darken($color,10%);
+			}
+			.ct-point {
+				stroke-width: 10px;
+				stroke-linecap: circle;
+			}
+			.ct-series-a .ct-point {
+				stroke: lighten($color,12%);
+			}
+			.ct-series-b .ct-point {
+				stroke: lighten($color,5%);
+			}
+			.ct-series-c .ct-point {
+				stroke: $color;
+			}
+			.ct-series-d .ct-point {
+				stroke: darken($color,5%);
+			}
+			.ct-series-e .ct-point {
+				stroke: darken($color,10%);
+			}
+		}
+		
+		// Bar chart
+		
+		.ct-chart-bar {
+			.ct-bar {
+				stroke-width: 10px;
+			}
+			.ct-series-a .ct-bar {
+				stroke: lighten($color,12%);
+			}
+			.ct-series-b .ct-bar {
+				stroke: lighten($color,5%);
+			}
+			.ct-series-c .ct-bar {
+				stroke: $color;
+			}
+			.ct-series-d .ct-bar {
+				stroke: darken($color,5%);
+			}
+			.ct-series-e .ct-bar {
+				stroke: darken($color,10%);
+			}
+		}
+		
+		// Pie chart
+		.ct-chart-pie,
+		.ct-chart-donut {
+			.ct-slice-pie {
+				stroke: white;
+				stroke-width: 4px;
+			}
+			.ct-series-a .ct-slice-pie,
+			.ct-series-a path {
+				fill: lighten($color,12%);
+			}
+			.ct-series-b .ct-slice-pie,
+			.ct-series-b path {
+				fill: lighten($color,5%);
+			}
+			.ct-series-c .ct-slice-pie,
+			.ct-series-c path {
+				fill: $color;
+			}
+			.ct-series-d .ct-slice-pie,
+			.ct-series-d path {
+				fill: darken($color,5%);
+			}
+			.ct-series-e .ct-slice-pie,
+			.ct-series-e path {
+				fill: darken($color,10%);
+			}
+		}
+		
+	}
+	
+}
+
+.chart-mixed {
+		
+	// Bar chart
+	
+	.ct-chart-bar {
+		.ct-bar {
+			stroke-width: 10px;
+		}
+		.ct-series-a .ct-bar {
+			stroke: $color-red;
+		}
+		.ct-series-b .ct-bar {
+			stroke: $color-yellow;
+		}
+		.ct-series-c .ct-bar {
+			stroke: $color-green;
+		}
+		.ct-series-d .ct-bar {
+			stroke: $color-mint;
+		}
+		.ct-series-e .ct-bar {
+			stroke: $color-aqua;
+		}
+		.ct-series-f .ct-bar {
+			stroke: $color-blue;
+		}
+		.ct-series-g .ct-bar {
+			stroke: $color-purple;
+		}
+		.ct-series-h .ct-bar {
+			stroke: $color-pink;
+		}
+		.ct-series-i .ct-bar {
+			stroke: $color-medium-grey;
+		}
+	}
+	
+	// Pie chart
+	.ct-chart-pie,
+	.ct-chart-donut {
+		.ct-slice-pie {
+			stroke: white;
+			stroke-width: 4px;
+		}
+		.ct-series-a .ct-slice-pie {
+			fill: $color-red;
+		}
+		.ct-series-b .ct-slice-pie {
+			fill: $color-yellow;
+		}
+		.ct-series-c .ct-slice-pie {
+			fill: $color-green;
+		}
+		.ct-series-d .ct-slice-pie {
+			fill: $color-mint;
+		}
+		.ct-series-e .ct-slice-pie {
+			fill: $color-aqua;
+		}
+		.ct-series-f .ct-slice-pie {
+			fill: $color-blue;
+		}
+		.ct-series-g .ct-slice-pie {
+			fill: $color-purple;
+		}
+		.ct-series-h .ct-slice-pie {
+			fill: $color-pink;
+		}
+		.ct-series-i .ct-slice-pie {
+			fill: $color-medium-grey;
+		}
+	}
+	
+}

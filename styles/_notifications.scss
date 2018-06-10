@@ -1,0 +1,116 @@
+/* Notifications */
+
+$notification-height: 32px;
+
+.notification {
+	
+	position: relative;
+	min-height: $notification-height;
+	padding: 0 50px;
+	margin: 20px auto;
+	color: #FFF;
+	line-height: $notification-height;
+	
+	span {
+		line-height: $notification-height;
+	}
+	
+	> span.title {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+	
+	> span.icon {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		height: $notification-height;
+		line-height: $notification-height;
+		svg {
+			color: #FFF;
+		}
+	}
+	
+	a.close {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		height: $notification-height;
+		text-align: center;
+		color: #FFF;
+		cursor: pointer;
+		line-height: $notification-height;
+		display: block;
+		svg {
+			margin: 0;
+			@include transition(0.1s);
+		}
+		&:hover {
+			svg {
+				transform: scale(1.1,1.1);
+			}
+		}
+	}
+	
+	// Sizes
+	
+	&.short {
+		width: 95%;
+		max-width: 1000px;
+		border-radius: 5px;
+		@include box-shadow-raised-lower;
+	}
+	
+	&.large {
+		width: 100%;
+		min-height: $notification-height+10;
+		line-height: $notification-height+10;
+		> span.icon,
+		> a.close {
+			height: $notification-height+10;
+			line-height: $notification-height+10;
+		}
+	}
+	
+	// Colors
+	
+  @each $name,$color in $notification_list {
+    &.#{$name} {
+			border: 1px solid darken($color, 5%);
+			background: $color;
+    }
+  }
+	
+	// Media Queries
+	
+	/*
+	
+	@include breakpoint('phone'){
+		
+		padding: 8px 50px;
+		line-height: normal;
+		
+		> span.title,
+		> span.text {
+			font-size: 8px;
+		}
+		
+		> span.title {
+			width: 100%;
+			display: block;
+		}
+		
+		> a.close,
+		span.icon {
+			font-size: 20px;
+		}
+		
+		&.large {
+			line-height: normal;
+		}
+		
+	}
+	
+	*/
+	
+}

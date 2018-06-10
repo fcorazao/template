@@ -1,0 +1,106 @@
+/* Buttons */
+
+.btn {
+	
+	position: relative;
+	padding: 0;
+	margin: 0 5px 0 0;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	font-weight: 400;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	background: $color-medium-grey-2;
+	white-space: nowrap;
+	display: inline-block;
+	
+	@include transition(0.2s);
+	@include soft-shadow;
+	
+	span {
+		
+	}
+	
+	// Types
+	
+	&.btn-text {
+		@each $name, $sizes in $buttons-text {
+			$height: nth($sizes, 1);
+			$padding: nth($sizes, 2);
+			$radius: nth($sizes, 3);
+			&.#{$name} {
+				height: $height;
+				line-height: $height;
+				padding: 0 $padding;
+				&.btn-round { border-radius: $radius; }
+			}
+		}
+	}
+	
+	&.btn-text-icon {
+		@each $name, $sizes in $buttons-text-icon {
+			$height: nth($sizes, 1);
+			$padding: nth($sizes, 2);
+			$padding-round: nth($sizes, 3);
+			$radius: nth($sizes, 4);
+			&.#{$name} {
+				height: $height;
+				line-height: $height;
+				padding: $padding;
+				&.btn-round { padding: $padding-round; border-radius: $radius; }
+			}
+		}
+	}
+	
+	&.btn-icon {
+		@each $name, $sizes in $buttons-icon {
+			$size: nth($sizes, 1);
+			$radius: nth($sizes, 2);
+			&.#{$name} {
+				width: $size;
+				height: $size;
+				line-height: $size;
+				&.btn-round { border-radius: $radius; }
+			}
+		}
+	}
+	
+	// Tiny button font size
+	
+	&.btn-xs {
+		font-size: $fs-body-sm;
+	}
+	
+	// Colors
+	
+  @each $name,$color in $btns_list {
+    &.#{$name} {
+			background: $color;
+			&:hover {
+				background: darken($color, 3%);
+			}
+    }
+  }
+	
+}
+
+// Aligment
+
+.text-left {
+	.btn {
+		margin-right: 5px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+.text-right {
+	.btn {
+		margin-left: 5px;
+		&:first-of-type { 
+			margin-left: 0;
+		}
+	}
+}

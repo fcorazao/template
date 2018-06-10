@@ -1,0 +1,195 @@
+/* Breakpoints */
+
+@mixin breakpoint($map) {
+  $query: "";
+  @if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
+  @if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
+  @if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
+  @media screen and #{$query} { @content; }
+}
+
+/* Mixins */
+
+@mixin transition($time) {
+	-webkit-transition: all $time ease;
+		 -moz-transition: all $time ease;
+			-ms-transition: all $time ease;
+			 -o-transition: all $time ease;
+					transition: all $time ease;
+}
+@mixin transition-custom($args) {
+	-webkit-transition: $args;
+		 -moz-transition: $args;
+			-ms-transition: $args;
+			 -o-transition: $args;
+					transition: $args;
+}
+@mixin transition-visibility-opacity($time) {
+	visibility: hidden;
+  opacity: 0;
+	-webkit-transition: visibility 0s linear $time, opacity $time linear;
+		 -moz-transition: visibility 0s linear $time, opacity $time linear;
+			-ms-transition: visibility 0s linear $time, opacity $time linear;
+			 -o-transition: visibility 0s linear $time, opacity $time linear;
+					transition: visibility 0s linear $time, opacity $time linear;
+}
+@mixin transform-translate($percent) {
+	-webkit-transform:translate($percent,$percent);
+			-ms-transform:translate($percent,$percent);
+					transform:translate($percent,$percent);
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Z Index
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+// Shadows
+
+@mixin box-shadow-raised {
+	-moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)
+}
+@mixin box-shadow-raised-lower {
+	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+@mixin box-shadow-bottom {
+	-moz-box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+@mixin soft-shadow {
+	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+@mixin box-shadow-2 {
+	-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.36);
+	-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.36);
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.36);
+}
+@mixin box-shadow-alert {
+	-moz-box-shadow: 0 0 6px 0 rgba(243, 49, 85, 0.6);
+	-webkit-box-shadow: 0 0 6px 0 rgba(243, 49, 85, 0.6);
+	box-shadow: 0 0 6px 0 rgba(243, 49, 85, 0.6);
+}
+@mixin no-shadow {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow:  none !important;
+	box-shadow:  none !important;
+}
+
+/* Breakpoints */
+
+$phone-width: 640px;
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 1280px) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 1080px) and (max-width: 1279px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 850px) and (max-width: 1079px) { @content ; }
+  }
+   @else if $point == tablet-phablet {
+     @media (min-width: $phone-width + 1) and (max-width: 1079px)  { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: $phone-width + 1) and (max-width: 850px)  { @content ; }
+  }
+  @else if $point == phone {
+		@media
+		(-webkit-min-device-pixel-ratio: 2),
+		(min--moz-device-pixel-ratio: 2),
+		(-o-device-pixel-ratio: 2 / 4),
+		(min-device-pixel-ratio: 2),
+		(min-resolution: 2dppx),
+		(min-resolution: 120dpi),
+		(max-width: $phone-width) { @content ; }
+  }
+}
+
+/* Flex */
+
+@mixin display-flex {
+	display: -webkit-flex;
+	display: flex;
+}
+@mixin justify-content($value) {
+	-webkit-justify-content: $value;
+	justify-content: $value;
+}
+@mixin align-content($value) {
+	-webkit-align-content: $value;
+	align-content: $value;
+}
+@mixin align-items($value) {
+	-webkit-align-items: $value;
+	align-items: $value;
+}
+@mixin flex-basis($value) {
+	-webkit-flex-basis: $value;
+	flex-basis: $value;
+}
+@mixin flex-wrap($value) {
+	-webkit-flex-wrap: $value;
+	flex-wrap: $value;
+}
+@mixin flex-grow($value) {
+	-webkit-flex-grow: $value;
+	flex-grow: $value;
+}
+@mixin flex-shrink($value) {
+	-webkit-flex-shrink: $value;
+	flex-shrink: $value;
+}
+
+/* Placeholder */
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+// Clearfix
+
+@mixin clearfix {
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}

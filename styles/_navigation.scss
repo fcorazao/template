@@ -1,0 +1,220 @@
+/* Navigation */
+
+$navigation-height: 50px;
+
+nav.hor-nav {
+	
+	height: $navigation-height;
+	margin: 0 0 20px 0;
+	padding: 0 10px;
+	color: #FFF;
+	@include box-shadow-bottom;
+	
+	// Types
+	
+	&.nav-text {
+		> ul {
+			float: left;
+			> li {
+				float: left;
+			}
+		}
+		text-align: left;
+	}
+	
+	&.nav-icon {
+		> ul {
+			float: right;
+			> li {
+				float: left;
+			}
+		}
+		text-align: right;
+	}
+	
+	// Navigation title
+	
+	.nav-title {
+		float: left;
+		height: $navigation-height - 10;
+		line-height: $navigation-height - 10;
+		margin: 5px 0;
+		padding: 0 10px;
+		font-size: $fs-body-lg;
+		font-weight: 300;
+		color: #FFF;
+	}
+	
+	// Reset margins and paddings
+	
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	// Style main list
+	
+	> ul {
+		> li {
+			
+			position: relative;
+			display: inline-block;
+			
+			> a {
+				
+				height: $navigation-height - 10;
+				margin: 5px 0;
+				padding: 0 10px;
+				color: #FFF;
+				line-height: $navigation-height - 10;
+				text-transform: uppercase;
+				cursor: pointer;
+				border-radius: 3px;
+				display: block;
+				
+				@include transition(0.1s);
+				
+				&:hover {
+					background: rgba(255,255,255,0.1);
+				}
+				
+			}
+			
+			&.ui-state-active {
+				a {
+					background: rgba(255,255,255,0.1);
+				}
+			}
+		
+		}
+	}
+	
+	// Style dropdown
+	
+	> ul {
+		> li {
+			> div {
+				
+				position: absolute;
+				top: $navigation-height - 5;
+				padding: 5px 0;
+				text-align: left;
+				color: $color-medium-grey-2;
+				border-radius: 2px;
+				background: $color-light-grey;
+				display: none;
+				z-index: 999;
+				
+				@include box-shadow-2;
+				
+				// Active
+				
+				&.active {
+					display: block;
+				}
+				
+				// Positions
+				
+				&.left {
+					left: 0;
+				}
+				
+				&.right {
+					right: 0;
+				}
+				
+				// Styling
+				
+				> ul {
+					> li {
+						
+						display: block;
+						
+						> a {
+							
+							height: $navigation-height / 2 + 10;
+							margin: 0 5px;
+							padding: 0 15px;
+							font-size: $fs-body-xs;
+							color: $color-dark-grey;
+							line-height: $navigation-height / 2 + 10;
+							border-radius: 3px;
+							cursor: pointer;
+							white-space: nowrap;
+							display: block;
+							
+							@include transition(0.2s);
+							
+						}
+						
+					}
+				}
+				
+				h6 {
+					height: 20px;
+					margin: 0;
+					padding: 0 15px;
+					font-size: $fs-body-xs;
+					font-weight: 300;
+					color: $color-medium-grey-2;
+					line-height: 20px;
+				}
+				
+				hr {
+					width: 100%;
+					padding: 0;
+					margin: 5px 0;
+					border: none;
+					border-bottom: 1px solid $color-light-grey-2;
+					border-collapse: collapse;
+					outline: none;
+				}
+				
+			}
+		}
+	}
+	
+	// Colors
+	
+  @each $name,$color in $nav_list {
+    &.#{$name} {
+			background: $color;
+			a.inner {
+				&:hover {
+					color: #FFF;
+					background: $color;
+					@include box-shadow-raised-lower;
+				}
+			}
+    }
+  }
+	
+	// Sizes
+	
+	&.short {
+		width: 95%;
+		max-width: 1000px;
+		margin: 0 auto 20px auto;
+		border-radius: 3px;
+	}
+	
+	&.large {
+		width: 100%;
+		height: $navigation-height + 10;
+		.nav-title {
+			height: $navigation-height - 10 + 10;
+			font-size: $fs-body-xl;
+			line-height: $navigation-height - 10 + 10;
+		}
+		div.menu-dropdown {
+			top: $navigation-height - 5 + 10;
+		}
+		a.outer {
+			height: $navigation-height - 10 + 10;
+			padding: 0 15px;
+			line-height: $navigation-height - 10 + 10;
+		}
+	}
+	
+}

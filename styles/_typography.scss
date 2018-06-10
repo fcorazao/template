@@ -1,0 +1,71 @@
+/* Typography */
+
+html, body {
+	font-family: $font-sans;
+	font-size: $fs-body;
+	font-weight: 400;
+	color: $color-dark-grey-2;
+}
+
+// Links
+
+a {
+	color: $color-dark-grey-2;
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none !important;
+	}
+}
+
+// Headers
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 10px 0;
+	font-family: $font-sans;
+	font-weight: 300;
+}
+@each $name, $value in $font-size-headers {
+  #{$name} {
+    font-size: $value;
+  }
+}
+
+// Parragraph
+
+p {
+	font-size: $fs-body;
+	line-height: $fs-body * 1.5;
+}
+
+// Blockquote
+
+blockquote {
+	padding-left: 10px;
+	margin-left: 0;
+	font-size: $fs-body;
+	line-height: $fs-body * 1.5;
+	border-left: 3px solid $color-medium-grey;
+	footer {
+		width: 100%;
+		margin-top: 5px;
+		font-style: italic;
+		color: $color-medium-grey-2;
+		&:before {
+			content: '\2014 ';
+		}
+	}
+}
+
+// ???
+
+label.radchk > span {
+	float: left !important;
+	height: 18px !important;
+	line-height: 18px !important;
+	display: inline-block !important;
+	&.ui-icon {
+		margin-top: 0 !important;
+	}
+}

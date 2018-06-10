@@ -1,0 +1,174 @@
+/* Tables */
+
+table.dt {
+	
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	
+	// General cell styling
+	
+	td, th {
+		&.dt-title,
+		&.dt-lg,
+		&.dt-variable {
+			text-align: left !important;
+		}
+		&.dt-md,
+		&.dt-sm,
+		&.dt-xs,
+		&.dt-btns {
+			text-align: center !important;
+		}
+	}
+	
+	// Cell sizing
+	
+	@each $name, $width in $table-columns {
+		td, th {
+			&.#{$name} {
+				width: $width;
+			}
+		}
+	}
+	
+	// Header
+	
+	thead {
+		
+		&:after {
+			content: '-';
+			display: block;
+			line-height: 1rem;
+			color: transparent;
+		}
+		
+		tr {
+			
+			width: 100%;
+			height: 50px;
+			padding: 0 5px;
+			margin: 0 0 10px 0;
+			color: $color-dark-grey-2;
+			font-weight: 700;
+			line-height: 50px;
+			border: none;
+			border-bottom: 1px solid #ebeff0;
+			background: $color-light-grey;
+			
+			th {
+				position: relative;
+				padding: 0;
+				margin: 0;
+				> div {
+					position: absolute;
+					right: 5px;
+					top: 0;
+					font-size: 10px;
+				}
+				&.sorting_desc {
+					.fa-sort-down {
+						color: $color-blue;
+					}
+				}
+				&.sorting_asc {
+					.fa-sort-up {
+						color: $color-blue;
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+	/*
+	
+	// Footer
+	
+	tfoot {
+		tr {
+			td {
+				padding: 10px 20px;
+			}
+		}
+	}
+	
+	*/
+	
+	tbody {
+		
+		tr {
+			
+			width: 100%;
+			min-height: 46px;
+			margin: 0;
+			padding: 0;
+			color: $color-medium-grey-2;
+			font-weight: 400;
+			background: $color-light-grey;
+			@include transition-custom(background 0.2s ease);
+			
+			&:nth-of-type(even) {
+				background: darken($color-light-grey,2%);
+			}
+			
+			&:hover {
+				background: lighten($color-medium-grey,11%);
+			}
+			
+			td {
+				
+				padding: 5px;
+				
+				a {
+					color: $color-medium-grey;
+					cursor: pointer;
+					@include transition-custom(color 0.2s ease);
+				}
+				
+				label.radchk {
+					margin: 0 !important;
+					.ui-checkboxradio-icon-space {
+						display: none !important;
+					}
+				}
+				
+			}
+			
+			&:hover {
+				@each $name, $color in $table_btns_list {
+					td{
+						a {
+							&.#{$name} {
+								color: $color;
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
+/* Filters row */
+
+.table-filters-row {
+	margin-bottom: 1%;
+}
+
+/* Table search */
+
+.table-search {
+	max-width: 250px !important;
+	width: 60% !important;
+	margin-left: 3% !important;
+	@include respond-to('medium') {
+		width: 50% !important;
+	}
+}
+
