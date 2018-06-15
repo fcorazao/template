@@ -38,6 +38,9 @@ include_once('inc/functions.php');
 			<h3>Colors</h3>
 			
 			<article>
+				<div class="title">
+					<h4>Template colors</h4>
+				</div>
 				<div class="row">
 					<div class="cb">
 						<div class="color-box-left color-red">Red</div>
@@ -89,6 +92,9 @@ include_once('inc/functions.php');
 						<div class="color-box-left color-dark-grey">Grey dark</div>
 						<div class="color-box-right color-dark-grey-2">Grey dark 2</div>
 					</div>
+				</div>
+				<div class="title">
+					<h4>Corporate Colors</h4>
 				</div>
 				<div class="row">
 					<div class="cb">
@@ -218,7 +224,7 @@ include_once('inc/functions.php');
 							<label class="text success with-icon-right">
 								<span class="border"></span>
 								<input type="text">
-								<span class="label">Error input</span>
+								<span class="label">Success input</span>
 								<span class="icon right"><i class="far fa-check fa-fw fa-lg"></i></span>
 							</label>
 						</div>
@@ -226,7 +232,7 @@ include_once('inc/functions.php');
 							<label class="text error with-icon-right">
 								<span class="border"></span>
 								<input type="text">
-								<span class="label">Success input</span>
+								<span class="label">Error input</span>
 								<span class="icon right"><i class="far fa-times fa-fw fa-lg"></i></span>
 							</label>
 						</div>
@@ -464,10 +470,10 @@ include_once('inc/functions.php');
 						<div class="title">
 							<h4>Sliders</h4>
 						</div>
-						<div id="slider_1" class="slider sldr_info"></div>
-						<div id="slider_range_1" class="slider_range sldr_success"></div>
-						<div id="slider_2" class="slider sldr_warning"></div>
-						<div id="slider_range_2" class="slider_range sldr_error"></div>
+						<div id="slider_1" class="slider info"></div>
+						<div id="slider_range_1" class="slider_range success"></div>
+						<div id="slider_2" class="slider warning"></div>
+						<div id="slider_range_2" class="slider_range error"></div>
 					</article>
 					
 				</div>
@@ -498,7 +504,7 @@ include_once('inc/functions.php');
 						</div>
 						<div class="card card-regular" id="tabs-1">
 							<header>
-								<nav class="hor-nav nav-comment nav-text large">
+								<nav class="hor-nav comment nav-text large">
 									<ul>
 										<li><a href="#tabs-1-1" class="outer">Link</a></li>
 										<li><a href="#tabs-1-2" class="outer">Link</a></li>
@@ -529,7 +535,7 @@ include_once('inc/functions.php');
 						</div>
 						<div class="card card-clear" id="tabs-2">
 							<header>
-								<nav class="hor-nav nav-info nav-text large">
+								<nav class="hor-nav info nav-text large">
 									<ul>
 										<li><a href="#tabs-2-1" class="outer">Link</a></li>
 										<li><a href="#tabs-2-2" class="outer">Link</a></li>
@@ -800,7 +806,7 @@ include_once('inc/functions.php');
 					<article>
 						<h4>Dropdowns</h4>
 						
-						<div class="dropdown active style-warning no-shadow">
+						<div class="dropdown active warning no-shadow">
 							<a class="btn btn-back btn-md btn-text-icon">Ver <span>20</span> <i class="fas fa-chevron-down fa-fw"></i></a>
 							<ul>
 								<li class="filter_count" data-val="5">5</li>
@@ -811,7 +817,7 @@ include_once('inc/functions.php');
 							</ul>
 						</div>
 						
-						<div class="dropdown active style-info no-shadow">
+						<div class="dropdown active info no-shadow">
 							<a class="btn btn-back btn-md btn-text-icon">With icons: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
 							<ul class="with-icons">
 								<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
@@ -823,7 +829,7 @@ include_once('inc/functions.php');
 							</ul>
 						</div>
 						
-						<div class="dropdown active style-error no-shadow">
+						<div class="dropdown active error no-shadow">
 							<a class="btn btn-back btn-md btn-text-icon">Right: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
 							<ul class="with-icons align-right">
 								<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
@@ -871,7 +877,7 @@ include_once('inc/functions.php');
 			
 			<h3>Tables</h3>
 			
-			<?php build_table('test-table',NULL,$columns,$data,'active','test-view','test-icon','style-'.$table_style,5); ?>
+			<?php build_table('test-table',NULL,$columns,$data,'active','test-view','test-icon',$table_style,5); ?>
 			
 		</div>
 		

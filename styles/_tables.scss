@@ -138,7 +138,7 @@ table.dt {
 			}
 			
 			&:hover {
-				@each $name, $color in $table_btns_list {
+				@each $name, $color in $table_buttons_colors {
 					td{
 						a {
 							&.#{$name} {

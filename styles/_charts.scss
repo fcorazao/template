@@ -2,7 +2,7 @@
 
 // Corporate colors
 
-@each $name, $colors in $chart_corp_list {
+@each $name, $colors in $corporate_colors_map {
 	
 	$color_1: nth($colors, 1);
 	$color_2: nth($colors, 2);
@@ -67,7 +67,7 @@
 
 //
 
-@each $name, $color in $chart_list {
+@each $name, $color in $status_colors {
 	
 	.#{$name} {
 		
@@ -176,7 +176,7 @@
 	
 }
 
-.chart-mixed {
+.mixed {
 		
 	// Bar chart
 	

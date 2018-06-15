@@ -141,7 +141,7 @@ $items_aside[5]['Dropdown'] = 0;
 
 // Tables
 
-$table_style = 'corp-alt';
+$table_style = 'corp-sec';
 
 $columns[0]['content'] = 'Tiny';
 $columns[0]['class'] = 'dt-xs';

@@ -19,7 +19,7 @@
 			
 			@include box-shadow-raised;
 			
-			@each $name,$color in $bkgs_list {
+			@each $name,$color in $background_colors {
 				&.#{$name} {
 					background: linear-gradient(60deg, $color, darken($color,5%));
 				}

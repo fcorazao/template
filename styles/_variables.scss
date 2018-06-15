@@ -147,35 +147,16 @@ $buttons-icon: (
 
 // Charts
 
-$chart_corp_list : (
-	chart-corp-main: (lighten($color-corp-main,12%), lighten($color-corp-main,5%),$color-corp-main,darken($color-corp-main,5%),darken($color-corp-main,12%)),
-	chart-corp-sec: (lighten($color-corp-sec,12%), lighten($color-corp-sec,5%),$color-corp-sec,darken($color-corp-sec,5%),darken($color-corp-sec,12%)),
-	chart-corp-alt: (lighten($color-corp-alt,12%), lighten($color-corp-alt,5%),$color-corp-alt,darken($color-corp-alt,5%),darken($color-corp-alt,12%)),
-	chart-corp-mixed: (lighten($color-corp-alt,12%), lighten($color-corp-sec,5%), $color-corp-main, darken($color-corp-sec,5%),darken($color-corp-alt,12%)),
-);
-
-$chart_list : (
-	chart-error: $color-red,
-	chart-info: $color-aqua,
-	chart-success: $color-mint,
-	chart-warning: $color-yellow,
-	chart-comment: $color-purple-2
+$corporate_colors_map : (
+	corp-main: (lighten($color-corp-main,12%), lighten($color-corp-main,5%),$color-corp-main,darken($color-corp-main,5%),darken($color-corp-main,12%)),
+	corp-sec: (lighten($color-corp-sec,12%), lighten($color-corp-sec,5%),$color-corp-sec,darken($color-corp-sec,5%),darken($color-corp-sec,12%)),
+	corp-alt: (lighten($color-corp-alt,12%), lighten($color-corp-alt,5%),$color-corp-alt,darken($color-corp-alt,5%),darken($color-corp-alt,12%)),
+	corp-mixed: (lighten($color-corp-alt,12%), lighten($color-corp-sec,5%), $color-corp-main, darken($color-corp-sec,5%),darken($color-corp-alt,12%)),
 );
 
 // Tables
 
-$table_list : (
-	style-error: $color-red,
-	style-info: $color-aqua,
-	style-success: $color-mint,
-	style-warning: $color-yellow,
-	style-comment: $color-purple-2,
-	style-corp-main: $color-corp-main,
-	style-corp-sec: $color-corp-sec,
-	style-corp-alt: $color-corp-alt
-);
-
-$table_btns_list : (
+$table_buttons_colors : (
 	btn-view: $color-purple-2,
 	btn-edit: $color-mint,
 	btn-delete: $color-red,
@@ -183,44 +164,9 @@ $table_btns_list : (
 	btn-review: $color-yellow
 );
 
-// Dropdowns
-
-$dropdowns_list : (
-	style-error: $color-red,
-	style-info: $color-aqua,
-	style-success: $color-mint,
-	style-warning: $color-yellow,
-	style-comment: $color-purple-2,
-	style-corp-main: $color-corp-main,
-	style-corp-sec: $color-corp-sec,
-	style-corp-alt: $color-corp-alt
-);
-
-// Notifications
-
-$notification_list : (
-	notification-error: $color-red,
-	notification-success: $color-mint,
-	notification-warning: $color-yellow,
-	notification-comment: $color-purple
-);
-
-// Navigations
-
-$nav_list : (
-	nav-error: $color-red,
-	nav-info: $color-aqua,
-	nav-success: $color-mint,
-	nav-warning: $color-yellow,
-	nav-comment: $color-purple-2,
-	style-corp-main: $color-corp-main,
-	style-corp-sec: $color-corp-sec,
-	style-corp-alt: $color-corp-alt
-);
-
 // Buttons
 
-$btns_list : (
+$buttons_colors : (
 	btn-main: $color-purple-2,
 	btn-accept: $color-aqua,
 	btn-save: $color-mint,
@@ -231,7 +177,7 @@ $btns_list : (
 
 // Backgrounds
 
-$bkgs_list : (
+$background_colors : (
 	bk-main: $color-purple-2,
 	bk-accept: $color-aqua,
 	bk-save: $color-mint,
@@ -240,132 +186,33 @@ $bkgs_list : (
 	bk-info: $color-yellow
 );
 
-// Progress bars
+// Styling colors
 
-$progress_bar_list : (
+$styles_colors : (
+	error: $color-red,
+	info: $color-aqua,
+	success: $color-mint,
+	warning: $color-yellow,
+	comment: $color-purple-2,
+	corp-main: $color-corp-main,
+	corp-sec: $color-corp-sec,
+	corp-alt: $color-corp-alt
+);
+
+// Status colors
+
+$status_colors : (
 	success: $color-mint,
 	info: $color-aqua,
 	warning: $color-yellow-2,
-	error: $color-red
-);
-
-// Sliders
-
-$sliders_list : (
-	sldr_success: $color-mint,
-	sldr_info: $color-aqua,
-	sldr_warning: $color-yellow-2,
-	sldr_error: $color-red
-);
-
-// Inputs
-
-$inputs_list : (
-	success: $color-mint,
-	info: $color-aqua,
-	warning: $color-yellow-2,
-	error: $color-red
+	error: $color-red,
+	comment: $color-purple
 );
 
 /* Backgrounds */
 
-@each $name,$color in $bkgs_list {
+@each $name,$color in $background_colors {
 	.#{$name} {
 		background: linear-gradient(60deg, $color, darken($color,15%));
 	}
-}
-
-/* Color boxes */
-
-$box-width: 65px;
-
-.cb {
-	position: relative;
-	float: left;
-	width: $box-width * 2;
-	height: $box-width * 2 - 10;
-	margin-right: 10px;
-}
-
-div[class^="color-box"] {
-	
-	position: relative;
-	float: left;
-	width: $box-width;
-	height: $box-width * 2 - 10;
-	padding: 25px 5px 5px 5px;
-	font-size: $fs-body;
-	font-weight: 500;
-	text-align: center;
-	line-height: 20px;
-	color: #FFF;
-	border: 0px solid $color-light-grey;
-	word-spacing: $box-width;
-	
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		border-style: solid;
-	}
-	
-	&.t-dark {
-		color: $color-dark-grey-2;
-	}
-	
-	&.color-red { background: $color-red; }
-	&.color-red-2 { background: $color-red-2; }
-	&.color-orange { background: $color-orange; }
-	&.color-orange-2 { background: $color-orange-2; }
-	&.color-yellow { background: $color-yellow; }
-	&.color-yellow-2 { background: $color-yellow-2; }
-	&.color-green { background: $color-green; }
-	&.color-green-2 { background: $color-green-2; }
-	&.color-mint { background: $color-mint; }
-	&.color-mint-2 { background: $color-mint-2; }
-	&.color-aqua { background: $color-aqua; }
-	&.color-aqua-2 { background: $color-aqua-2; }
-	&.color-blue { background: $color-blue; }
-	&.color-blue-2 { background: $color-blue-2; }
-	&.color-purple { background: $color-purple; }
-	&.color-purple-2 { background: $color-purple-2; }
-	&.color-pink { background: $color-pink; }
-	&.color-pink-2 { background: $color-pink-2; }
-	&.color-light-grey { background: $color-light-grey; }
-	&.color-light-grey-2 { background: $color-light-grey-2; }
-	&.color-medium-grey { background: $color-medium-grey; }
-	&.color-medium-grey-2 { background: $color-medium-grey-2; }
-	&.color-dark-grey { background: $color-dark-grey; }
-	&.color-dark-grey-2 { background: $color-dark-grey-2; }
-	&.color-corp-main { background: $color-corp-main; }
-	&.color-corp-main-2 { background: $color-corp-main-2; }
-	&.color-corp-sec { background: $color-corp-sec; }
-	&.color-corp-sec-2 { background: $color-corp-sec-2; }
-	&.color-corp-alt { background: $color-corp-alt; }
-	&.color-corp-alt-2 { background: $color-corp-alt-2; }
-	
-}
-
-.color-box-left {
-	
-	padding-left: 20px;
-	
-	&:after {
-		right: 0;
-		border-width: 0 $box-width 50px 0;
-		border-color: transparent transparent $color-light-grey transparent;
-	}
-	
-}
-
-.color-box-right {
-	
-	padding-right: 20px;
-	
-	&:after {
-		left: 0;
-		border-width: 50px $box-width 0 0;
-		border-color: transparent $color-light-grey transparent transparent;
-	}
-	
 }

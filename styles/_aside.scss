@@ -48,6 +48,7 @@ aside.nav {
 					line-height: 50px;
 					text-align: center;
 					display: inline-block;
+					vertical-align: middle;
 				}
 				
 			}
@@ -126,7 +127,7 @@ aside.nav {
 	
 	// Colors
 	
-  @each $name,$color in $nav_list {
+  @each $name,$color in $styles_colors {
     &.#{$name} {
 			background: $color;
 			ul{

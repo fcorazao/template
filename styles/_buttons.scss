@@ -75,7 +75,7 @@
 	
 	// Colors
 	
-  @each $name,$color in $btns_list {
+  @each $name,$color in $buttons_colors {
     &.#{$name} {
 			background: $color;
 			&:hover {

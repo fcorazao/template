@@ -65,7 +65,7 @@
 	
 	// Colors
 	
-  @each $name,$color in $progress_bar_list {
+  @each $name,$color in $status_colors {
     &.#{$name} {
 			background: lighten($color,30%);
 			.ui-progressbar-value {
@@ -107,7 +107,7 @@
 	
 	// Colors
 	
-  @each $name,$color in $sliders_list {
+  @each $name,$color in $status_colors {
     &.#{$name} {
 			background: lighten($color,30%);
 			.ui-slider-range {
@@ -699,7 +699,7 @@ $triangle-size: 10px;
 	
 	// Styling
 	
-	@each $name, $color in $dropdowns_list {
+	@each $name, $color in $styles_colors {
 		&.#{$name} {
 			
 			// List buttons

@@ -89,7 +89,7 @@ div.dataTables_paginate {
 	
 	// Styling
 	
-	@each $name,$color in $table_list {
+	@each $name,$color in $styles_colors {
     &.#{$name} {
 			a {
 				&.current {

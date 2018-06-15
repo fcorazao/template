@@ -47,7 +47,7 @@ function build_chart($id=NULL,$type,$labels,$series,$style){ //,$data,$active='a
 	
 	?>
 	
-	<div id="<?php echo $id; ?>" class="ct-perfect-fourth chart-<?php echo $style; ?>"></div>
+	<div id="<?php echo $id; ?>" class="ct-perfect-fourth <?php echo $style; ?>"></div>
 	
 	<?php include_once('inc/chartist-scripts.php'); ?>
 	
@@ -214,7 +214,7 @@ Container class	Ratio
  * 
  */
 
-function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='',$icon='',$style='style-info',$show='20'){
+function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='',$icon='',$style='info',$show='20'){
 	
 	?>
 
@@ -619,7 +619,7 @@ function delete_row($id,$table){
 function build_navigation($style,$type,$size,$items,$print=true,$title=''){
 	
 	// Open the nav
-	$nav = '<nav class="hor-nav nav-'.$style.' nav-'.$type.' '.' '.$size.'">';
+	$nav = '<nav class="hor-nav '.$style.' '.$type.' '.' '.$size.'">';
 	
 	// Check if it's icon and print the title
 	if($type==='icon'){ $nav .= '<span class="nav-title">'.$title.'</span>'; }
@@ -746,7 +746,7 @@ function build_vertical_navigation($style='info',$open='open',$collapsible=true,
 	global $TheSiteURL;
 	
 	// Start the sidebar
-	$nav = '<aside id="'.$id.'" class="nav '.$open.' nav-'.$style.'">';
+	$nav = '<aside id="'.$id.'" class="nav '.$open.' '.$style.'">';
 	
 	// Start the navigation
 	$nav .= '<nav id="nav">';
@@ -873,7 +873,7 @@ function build_vertical_navigation($style='info',$open='open',$collapsible=true,
 function print_notification($type,$size,$title,$text,$print=true,$icon=''){
 	
 	// Open the notification
-	$notification = '<div class="notification '.$size.' notification-'.$type.'">';
+	$notification = '<div class="notification '.$size.' '.$type.'">';
 	
 	// Check for a custom icon
 	if($icon===''){
