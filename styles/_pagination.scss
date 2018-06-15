@@ -16,6 +16,7 @@ ul.pagination {
 			height: 28px;
 			line-height: 28px;
 			border-radius: 14px;
+			cursor: pointer;
 			display: block;
 			&.words {
 				width: auto;
@@ -23,6 +24,7 @@ ul.pagination {
 			}
 			&.current {
 				color: #FFF;
+				cursor: default;
 				background: $color-mint;
 				@include soft-shadow;
 			}
@@ -58,6 +60,7 @@ div.dataTables_paginate {
 		margin: 0 2px;
 		line-height: 28px;
 		border-radius: 14px;
+		cursor: pointer;
 		display: inline-block;
 		&.previous,
 		&.next {
@@ -66,6 +69,7 @@ div.dataTables_paginate {
 		}
 		&.current {
 			color: #FFF;
+			cursor: default;
 			background: $color-mint;
 			@include soft-shadow;
 		}

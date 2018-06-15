@@ -1,3 +1,41 @@
+/* Corporate Colors */
+
+$color-corp-main: #f78808;
+$color-corp-main-2: darken($color-corp-main,5%);
+$color-corp-sec: #f2bf1b;
+$color-corp-sec-2: darken($color-corp-sec,5%);
+$color-corp-alt: #6ec7f1;
+$color-corp-alt-2: darken($color-corp-alt,5%);
+
+/* Colors */
+
+$color-red: #ed5564;
+$color-red-2: #d94650;
+$color-orange: #fb6e52;
+$color-orange-2: #e9573e;
+$color-yellow: #ffce55;
+$color-yellow-2: #f6bb43;
+$color-green: #a0d468;
+$color-green-2: #8cc051;
+$color-mint: #48cfae;
+$color-mint-2: #36bc9b;
+$color-aqua: #4fc0e8;
+$color-aqua-2: #3baeda;
+$color-blue: #5d9cec;
+$color-blue-2: #4b89dc;
+$color-purple: #ae90f0;
+$color-purple-2: #967bdc;
+$color-pink: #ec87bf;
+$color-pink-2: #d870ad;
+$color-light-grey: #f6f7fb;
+$color-light-grey-2: #e6e9ee;
+$color-medium-grey: #ccd0d9;
+$color-medium-grey-2: #aab2bd;
+$color-dark-grey: #656d78;
+$color-dark-grey-2: #454954;
+
+$color-background: #CCC; //$color-medium-grey;//#f1f2f6;
+
 /* Layout */
 
 $max-width: 1280px;
@@ -107,34 +145,14 @@ $buttons-icon: (
 	btn-lg: (48px, 24px)
 );
 
-/* Colors */
+// Charts
 
-$color-red: #ed5564;
-$color-red-2: #d94650;
-$color-orange: #fb6e52;
-$color-orange-2: #e9573e;
-$color-yellow: #ffce55;
-$color-yellow-2: #f6bb43;
-$color-green: #a0d468;
-$color-green-2: #8cc051;
-$color-mint: #48cfae;
-$color-mint-2: #36bc9b;
-$color-aqua: #4fc0e8;
-$color-aqua-2: #3baeda;
-$color-blue: #5d9cec;
-$color-blue-2: #4b89dc;
-$color-purple: #ae90f0;
-$color-purple-2: #967bdc;
-$color-pink: #ec87bf;
-$color-pink-2: #d870ad;
-$color-light-grey: #f6f7fb;
-$color-light-grey-2: #e6e9ee;
-$color-medium-grey: #ccd0d9;
-$color-medium-grey-2: #aab2bd;
-$color-dark-grey: #656d78;
-$color-dark-grey-2: #454954;
-
-$color-background: #CCC; //$color-medium-grey;//#f1f2f6;
+$chart_corp_list : (
+	chart-corp-main: (lighten($color-corp-main,12%), lighten($color-corp-main,5%),$color-corp-main,darken($color-corp-main,5%),darken($color-corp-main,12%)),
+	chart-corp-sec: (lighten($color-corp-sec,12%), lighten($color-corp-sec,5%),$color-corp-sec,darken($color-corp-sec,5%),darken($color-corp-sec,12%)),
+	chart-corp-alt: (lighten($color-corp-alt,12%), lighten($color-corp-alt,5%),$color-corp-alt,darken($color-corp-alt,5%),darken($color-corp-alt,12%)),
+	chart-corp-mixed: (lighten($color-corp-alt,12%), lighten($color-corp-sec,5%), $color-corp-main, darken($color-corp-sec,5%),darken($color-corp-alt,12%)),
+);
 
 $chart_list : (
 	chart-error: $color-red,
@@ -144,44 +162,17 @@ $chart_list : (
 	chart-comment: $color-purple-2
 );
 
+// Tables
+
 $table_list : (
 	style-error: $color-red,
 	style-info: $color-aqua,
 	style-success: $color-mint,
 	style-warning: $color-yellow,
-	style-comment: $color-purple-2
-);
-
-$dropdowns_list : (
-	style-error: $color-red,
-	style-info: $color-aqua,
-	style-success: $color-mint,
-	style-warning: $color-yellow,
-	style-comment: $color-purple-2
-);
-
-$notification_list : (
-	notification-error: $color-red,
-	notification-success: $color-mint,
-	notification-warning: $color-yellow,
-	notification-comment: $color-purple
-);
-
-$nav_list : (
-	nav-error: $color-red,
-	nav-info: $color-aqua,
-	nav-success: $color-mint,
-	nav-warning: $color-yellow,
-	nav-comment: $color-purple-2
-);
-
-$btns_list : (
-	btn-main: $color-purple-2,
-	btn-accept: $color-aqua,
-	btn-save: $color-mint,
-	btn-cancel: $color-red,
-	btn-back: $color-medium-grey-2,
-	btn-info: $color-yellow
+	style-comment: $color-purple-2,
+	style-corp-main: $color-corp-main,
+	style-corp-sec: $color-corp-sec,
+	style-corp-alt: $color-corp-alt
 );
 
 $table_btns_list : (
@@ -192,6 +183,54 @@ $table_btns_list : (
 	btn-review: $color-yellow
 );
 
+// Dropdowns
+
+$dropdowns_list : (
+	style-error: $color-red,
+	style-info: $color-aqua,
+	style-success: $color-mint,
+	style-warning: $color-yellow,
+	style-comment: $color-purple-2,
+	style-corp-main: $color-corp-main,
+	style-corp-sec: $color-corp-sec,
+	style-corp-alt: $color-corp-alt
+);
+
+// Notifications
+
+$notification_list : (
+	notification-error: $color-red,
+	notification-success: $color-mint,
+	notification-warning: $color-yellow,
+	notification-comment: $color-purple
+);
+
+// Navigations
+
+$nav_list : (
+	nav-error: $color-red,
+	nav-info: $color-aqua,
+	nav-success: $color-mint,
+	nav-warning: $color-yellow,
+	nav-comment: $color-purple-2,
+	style-corp-main: $color-corp-main,
+	style-corp-sec: $color-corp-sec,
+	style-corp-alt: $color-corp-alt
+);
+
+// Buttons
+
+$btns_list : (
+	btn-main: $color-purple-2,
+	btn-accept: $color-aqua,
+	btn-save: $color-mint,
+	btn-cancel: $color-red,
+	btn-back: $color-medium-grey-2,
+	btn-info: $color-yellow
+);
+
+// Backgrounds
+
 $bkgs_list : (
 	bk-main: $color-purple-2,
 	bk-accept: $color-aqua,
@@ -201,21 +240,27 @@ $bkgs_list : (
 	bk-info: $color-yellow
 );
 
-$prgs_list : (
+// Progress bars
+
+$progress_bar_list : (
 	success: $color-mint,
 	info: $color-aqua,
 	warning: $color-yellow-2,
 	error: $color-red
 );
 
-$sldr_list : (
+// Sliders
+
+$sliders_list : (
 	sldr_success: $color-mint,
 	sldr_info: $color-aqua,
 	sldr_warning: $color-yellow-2,
 	sldr_error: $color-red
 );
 
-$inpt_list : (
+// Inputs
+
+$inputs_list : (
 	success: $color-mint,
 	info: $color-aqua,
 	warning: $color-yellow-2,
@@ -292,6 +337,12 @@ div[class^="color-box"] {
 	&.color-medium-grey-2 { background: $color-medium-grey-2; }
 	&.color-dark-grey { background: $color-dark-grey; }
 	&.color-dark-grey-2 { background: $color-dark-grey-2; }
+	&.color-corp-main { background: $color-corp-main; }
+	&.color-corp-main-2 { background: $color-corp-main-2; }
+	&.color-corp-sec { background: $color-corp-sec; }
+	&.color-corp-sec-2 { background: $color-corp-sec-2; }
+	&.color-corp-alt { background: $color-corp-alt; }
+	&.color-corp-alt-2 { background: $color-corp-alt-2; }
 	
 }
 

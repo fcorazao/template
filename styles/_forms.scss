@@ -123,7 +123,7 @@ form {
 		
 		// Colors
 
-		@each $name,$color in $inpt_list {
+		@each $name,$color in $inputs_list {
 			&.#{$name} {
 				span.icon {
 					color: $color;
@@ -272,7 +272,7 @@ form {
 		
 		// Colors
 		
-		@each $name,$color in $inpt_list {
+		@each $name,$color in $inputs_list {
 			&.#{$name} {
 				&.ui-checkboxradio-checked {
 					> .ui-checkboxradio-icon {
@@ -311,7 +311,7 @@ form {
 		
 		// Colors
 		
-		@each $name,$color in $inpt_list {
+		@each $name,$color in $inputs_list {
 			&.#{$name} {
 				&.ui-checkboxradio-checked {
 					> .ui-checkboxradio-icon {

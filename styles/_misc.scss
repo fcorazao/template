@@ -65,7 +65,7 @@
 	
 	// Colors
 	
-  @each $name,$color in $prgs_list {
+  @each $name,$color in $progress_bar_list {
     &.#{$name} {
 			background: lighten($color,30%);
 			.ui-progressbar-value {
@@ -107,7 +107,7 @@
 	
 	// Colors
 	
-  @each $name,$color in $sldr_list {
+  @each $name,$color in $sliders_list {
     &.#{$name} {
 			background: lighten($color,30%);
 			.ui-slider-range {

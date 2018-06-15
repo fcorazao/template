@@ -1,5 +1,72 @@
 /* Charts */
 
+// Corporate colors
+
+@each $name, $colors in $chart_corp_list {
+	
+	$color_1: nth($colors, 1);
+	$color_2: nth($colors, 2);
+	$color_3: nth($colors, 3);
+	$color_4: nth($colors, 4);
+	$color_5: nth($colors, 5);
+	
+	.#{$name} {
+		
+		// Line chart
+		
+		&.line-solid {
+			.ct-line {
+			}
+		}
+		&.line-dashed {
+			.ct-line {
+				stroke-width: 2px;
+				stroke-dasharray: 5px 10px;
+			}
+		}
+		.ct-chart-line {
+			.ct-series-a .ct-line {
+				stroke: $color_1;
+			}
+			.ct-series-b .ct-line {
+				stroke: $color_2;
+			}
+			.ct-series-c .ct-line {
+				stroke: $color_3;
+			}
+			.ct-series-d .ct-line {
+				stroke: $color_4;
+			}
+			.ct-series-e .ct-line {
+				stroke: $color_5;
+			}
+			.ct-point {
+				stroke-width: 10px;
+				stroke-linecap: circle;
+			}
+			.ct-series-a .ct-point {
+				stroke: $color_1;
+			}
+			.ct-series-b .ct-point {
+				stroke: $color_2;
+			}
+			.ct-series-c .ct-point {
+				stroke: $color_3;
+			}
+			.ct-series-d .ct-point {
+				stroke: $color_4;
+			}
+			.ct-series-e .ct-point {
+				stroke: $color_5;
+			}
+		}
+		
+	}
+	
+}
+
+//
+
 @each $name, $color in $chart_list {
 	
 	.#{$name} {

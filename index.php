@@ -90,6 +90,20 @@ include_once('inc/functions.php');
 						<div class="color-box-right color-dark-grey-2">Grey dark 2</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="cb">
+						<div class="color-box-left color-corp-main">Corp main</div>
+						<div class="color-box-right color-corp-main-2">Corp main 2</div>
+					</div>
+					<div class="cb">
+						<div class="color-box-left color-corp-sec">Corp sec</div>
+						<div class="color-box-right color-corp-sec-2">Corp sec 2</div>
+					</div>
+					<div class="cb">
+						<div class="color-box-left color-corp-alt">Corp alt</div>
+						<div class="color-box-right color-corp-alt-2">Corp alt 2</div>
+					</div>
+				</div>
 			</article>
 			
 		</div>
@@ -878,7 +892,7 @@ include_once('inc/functions.php');
 			<?php
 			
 			$labels_1 = "'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'";
-			$series_1 = '[12, 9, 7, 8, 5],[2, 1, 3.5, 7, 3],[1, 3, 4, 5, 6]';
+			$series_1 = '[12, 9, 7, 8, 5],[2, 1, 3.5, 7, 3],[1, 3, 4, 5, 6],[12, 11, 13.5, 17, 13],[5, 6, 4, 7, 9]';
 			
 			$labels_2 = '1,2,3,4';
 			$series_2 = '[7,12,15,18]';
@@ -915,7 +929,7 @@ include_once('inc/functions.php');
 					<?php build_chart('second-chart-2','pie','',$series_pie_1,'mixed'); ?>
 				</div>
 				<div class="col-4">
-					<?php build_chart('another-chart-2','line',$labels_1,$series_1,'comment line-solid'); ?>
+					<?php build_chart('another-chart-2','line',$labels_1,$series_1,'corp-mixed line-solid'); ?>
 				</div>
 			</div>
 			
