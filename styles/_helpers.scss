@@ -20,6 +20,9 @@
 .no-shadow {
 	@include no-shadow;
 }
+.no-margin {
+	margin: 0 !important;
+}
 
 /* jQuery Fixes */
 

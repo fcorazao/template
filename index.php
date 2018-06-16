@@ -746,109 +746,116 @@ include_once('inc/functions.php');
 			<div class="row">
 				
 				<div class="col-3">
-					<article>
-						<h4>Launch Modal</h4>
-						<a class="btn btn-info btn-md btn-text" id="modal_trigger">Launch modal window</a>
-					</article>
+					
+					<div class="row">
+						<article>
+							<div class="title">
+								<h4>Launch Modal</h4>
+							</div>
+							<a class="btn btn-info btn-md btn-text" id="modal_trigger">Launch modal window</a>
+						</article>
+					</div>
+					
+					<div class="row">
+						<article>
+							<div class="title">
+								<h4>Datepicker</h4>
+							</div>
+							<form>
+								<label class="text no-margin">
+									<span class="border"></span>
+									<input type="text" id="datepicker" placeholder="<?php echo date("d/m/Y"); ?>">
+								</label>
+							</form>
+						</article>
+					</div>
+					
 				</div>
+				
 				<div class="col-3">
 					&nbsp;
 				</div>
+				
 				<div class="col-6">
-					<article>
-						<h4>Popovers</h4>
-						<a class="btn btn-md btn-accept btn-text popover_trigger">Left<span class="popover tooltip tooltip-left">This a very cool popover</span></a>
-						<a class="btn btn-md btn-accept btn-text popover_trigger">Top<span class="popover tooltip tooltip-top">This a very cool popover</span></a>
-						<a class="btn btn-md btn-accept btn-text popover_trigger">Bottom<span class="popover tooltip tooltip-bottom">This a very cool popover</span></a>
-						<a class="btn btn-md btn-accept btn-text popover_trigger">Right<span class="popover tooltip tooltip-right">This a very cool popover</span></a>
-					</article>
-				</div>
-				
-			</div>
-			
-			<div class="row">
-				
-				<div class="col-3">
-					<article>
-						<h4>Datepicker</h4>
-						<form>
-							<label class="text">
-								<span class="border"></span>
-								<input type="text" id="datepicker" placeholder="<?php echo date("d/m/Y"); ?>">
-							</label>
-						</form>
-					</article>
-				</div>
-				<div class="col-3">
-					&nbsp;
-				</div>
-				<div class="col-6">
-					<article>
-						<h4>Tooltips</h4>
-						<a class="btn btn-md btn-save btn-text tooltip_trigger">Left<span class="tooltip tooltip-left">This a very cool tooltip</span></a>
-						<a class="btn btn-md btn-save btn-text tooltip_trigger">Top<span class="tooltip tooltip-top">This a very cool tooltip</span></a>
-						<a class="btn btn-md btn-save btn-text tooltip_trigger">Bottom<span class="tooltip tooltip-bottom">This a very cool tooltip</span></a>
-						<a class="btn btn-md btn-save btn-text tooltip_trigger">Right<span class="tooltip tooltip-right">This a very cool tooltip</span></a>
-					</article>
-				</div>
-				
-			</div>
-			
-			<div class="row">
-				
-				<div class="col-3">
-					&nbsp;
-				</div>
-				<div class="col-3">
-					&nbsp;
-				</div>
-				<div class="col-6">
-					<article>
-						<h4>Dropdowns</h4>
+					
+					<div class="row">
+						<article>
+							<div class="title">
+								<h4>Popovers</h4>
+							</div>
+							<a class="btn btn-md btn-accept btn-text popover_trigger">Left<span class="popover tooltip tooltip-left">This a very cool popover</span></a>
+							<a class="btn btn-md btn-accept btn-text popover_trigger">Top<span class="popover tooltip tooltip-top">This a very cool popover</span></a>
+							<a class="btn btn-md btn-accept btn-text popover_trigger">Bottom<span class="popover tooltip tooltip-bottom">This a very cool popover</span></a>
+							<a class="btn btn-md btn-accept btn-text popover_trigger">Right<span class="popover tooltip tooltip-right">This a very cool popover</span></a>
+						</article>
+					</div>
+					
+					<div class="row">
+						<article>
+							<div class="title">
+								<h4>Tooltips</h4>
+							</div>
+							<a class="btn btn-md btn-save btn-text tooltip_trigger">Left<span class="tooltip tooltip-left">This a very cool tooltip</span></a>
+							<a class="btn btn-md btn-save btn-text tooltip_trigger">Top<span class="tooltip tooltip-top">This a very cool tooltip</span></a>
+							<a class="btn btn-md btn-save btn-text tooltip_trigger">Bottom<span class="tooltip tooltip-bottom">This a very cool tooltip</span></a>
+							<a class="btn btn-md btn-save btn-text tooltip_trigger">Right<span class="tooltip tooltip-right">This a very cool tooltip</span></a>
+						</article>
+					</div>
+					
+					<div class="row">
+						<article>
+							
+							<div class="title">
+								<h4>Dropdowns</h4>
+							</div>
+
+							<div class="dropdown active warning no-shadow">
+								<a class="btn btn-back btn-md btn-text-icon">Ver <span>20</span> <i class="fas fa-chevron-down fa-fw"></i></a>
+								<ul>
+									<li class="filter_count" data-val="5">5</li>
+									<li class="filter_count" data-val="10">10</li>
+									<li class="filter_count" data-val="20">20</li>
+									<li class="filter_count" data-val="50">50</li>
+									<li class="filter_count" data-val="-1">All</li>
+								</ul>
+							</div>
+
+							<div class="dropdown active info no-shadow">
+								<a class="btn btn-back btn-md btn-text-icon">With icons: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
+								<ul class="with-icons">
+									<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
+									<li class="filter_count" data-val="ambulance"><span><i class="fas fa-times fa-fw"></i></span>Incorrect</li>
+									<li class="filter_count" data-val="anchor"><span><i class="fas fa-anchor fa-fw"></i></span>Boat anchor</li>
+									<li class="filter_count" data-val="ban"><span><i class="fas fa-ban fa-fw"></i></span>Prohibited</li>
+									<li class="filter_count" data-val="band-aid"><span><i class="far fa-band-aidrfa-fw"></i></span>A regular band aid</li>
+									<li class="filter_count text-only" data-val="-1">All</li>
+								</ul>
+							</div>
+
+							<div class="dropdown active error no-shadow">
+								<a class="btn btn-back btn-md btn-text-icon">Right: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
+								<ul class="with-icons align-right">
+									<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
+									<li class="filter_count" data-val="ambulance"><span><i class="fas fa-times fa-fw"></i></span>Incorrect</li>
+									<li class="filter_count" data-val="anchor"><span><i class="fas fa-anchor fa-fw"></i></span>Boat anchor</li>
+									<li class="filter_count" data-val="ban"><span><i class="fas fa-ban fa-fw"></i></span>Prohibited</li>
+									<li class="filter_count" data-val="band-aid"><span><i class="far fa-band-aidrfa-fw"></i></span>A regular band aid</li>
+									<li class="filter_count text-only" data-val="-1">All</li>
+								</ul>
+							</div>
+
+						</article>
+					</div>
 						
-						<div class="dropdown active warning no-shadow">
-							<a class="btn btn-back btn-md btn-text-icon">Ver <span>20</span> <i class="fas fa-chevron-down fa-fw"></i></a>
-							<ul>
-								<li class="filter_count" data-val="5">5</li>
-								<li class="filter_count" data-val="10">10</li>
-								<li class="filter_count" data-val="20">20</li>
-								<li class="filter_count" data-val="50">50</li>
-								<li class="filter_count" data-val="-1">All</li>
-							</ul>
-						</div>
-						
-						<div class="dropdown active info no-shadow">
-							<a class="btn btn-back btn-md btn-text-icon">With icons: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
-							<ul class="with-icons">
-								<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
-								<li class="filter_count" data-val="ambulance"><span><i class="fas fa-times fa-fw"></i></span>Incorrect</li>
-								<li class="filter_count" data-val="anchor"><span><i class="fas fa-anchor fa-fw"></i></span>Boat anchor</li>
-								<li class="filter_count" data-val="ban"><span><i class="fas fa-ban fa-fw"></i></span>Prohibited</li>
-								<li class="filter_count" data-val="band-aid"><span><i class="far fa-band-aidrfa-fw"></i></span>A regular band aid</li>
-								<li class="filter_count text-only" data-val="-1">All</li>
-							</ul>
-						</div>
-						
-						<div class="dropdown active error no-shadow">
-							<a class="btn btn-back btn-md btn-text-icon">Right: <span>All</span><i class="fas fa-chevron-down fa-fw"></i></a>
-							<ul class="with-icons align-right">
-								<li class="filter_count" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Correct</li>
-								<li class="filter_count" data-val="ambulance"><span><i class="fas fa-times fa-fw"></i></span>Incorrect</li>
-								<li class="filter_count" data-val="anchor"><span><i class="fas fa-anchor fa-fw"></i></span>Boat anchor</li>
-								<li class="filter_count" data-val="ban"><span><i class="fas fa-ban fa-fw"></i></span>Prohibited</li>
-								<li class="filter_count" data-val="band-aid"><span><i class="far fa-band-aidrfa-fw"></i></span>A regular band aid</li>
-								<li class="filter_count text-only" data-val="-1">All</li>
-							</ul>
-						</div>
-						
-					</article>
 				</div>
 				
 			</div>
 			
 			<div class="row">
 				<article>
-					<h4 class="center_text">Carousel</h4>
+					<div class="title">
+						<h4 class="center_text">Carousel</h4>
+					</div>
 					<div id="carousel">
 						<div class="carousel">
 							<div><img src="img/carousel-1.jpg"><div class="slick-caption">Testing testing</div></div>
@@ -995,7 +1002,7 @@ include_once('inc/functions.php');
 										<fieldset class="center_text">
 											<button class="btn btn-main btn-md btn-text">Login</button>
 										</fieldset>
-										<p class="center_text"><a href="#">Or create an account</a></p>
+										<p class="center_text"><a href="#" class="btn-simple btn-main">Or create an account</a></p>
 										<br>
 									</div>
 									<div class="col-2">&nbsp;</div>
@@ -1033,6 +1040,9 @@ include_once('inc/functions.php');
 	</footer>
 </div>
 <div id="modal_background"></div>
+
+
+
 
 <script src="libs/jquery-ui/jquery-ui.min.js"></script>
 

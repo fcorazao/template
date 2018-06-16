@@ -2871,6 +2871,9 @@ figure {
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
 
+.no-margin {
+  margin: 0 !important; }
+
 /* jQuery Fixes */
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   float: none !important;
