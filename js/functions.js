@@ -49,44 +49,6 @@ $(function() {
 	
 });
 
-// Trigger bottom border for inputs
-
-$(function(){
-	
-	"use strict";
-	
-	// Text Input
-	
-	$('input').focus(function(){
-		$(this).prev('.border').addClass('active');
-		$(this).next('.label').addClass('active');
-	});
-	
-	$('input').blur(function(){
-		if($(this).val()===''){
-			$(this).next('.label').removeClass('active');
-		}
-		$(this).prev('.border').removeClass('active');
-	});
-	
-	// Textareas
-	
-	$('textarea').focus(function(){
-		$(this).addClass('active');
-		$(this).prev('.border').addClass('active');
-		$(this).next('.label').addClass('active');
-	});
-	
-	$('textarea').blur(function(){
-		if($(this).val()===''){
-			$(this).removeClass('active');
-			$(this).next('.label').removeClass('active');
-		}
-		$(this).prev('.border').removeClass('active');
-	});
-	
-});
-
 // Nav boxes
 
 $(function(){
@@ -193,4 +155,59 @@ $(function(){
 		$(this).find("svg").toggleClass('fa-caret-right').toggleClass('fa-caret-left');
 		$("#"+this_id).toggleClass('open').toggleClass('closed');
 	});
+});
+
+// Trigger bottom border for inputs
+
+$(function(){
+	
+	"use strict";
+	
+	// Text Input
+	
+	$('input').focus(function(){
+		$(this).prev('.border').addClass('active');
+		$(this).next('.label').addClass('active');
+	});
+	
+	$('input').blur(function(){
+		if($(this).val()===''){
+			$(this).next('.label').removeClass('active');
+		}
+		$(this).prev('.border').removeClass('active');
+	});
+	
+	// Textareas
+	
+	$('textarea').focus(function(){
+		$(this).addClass('active');
+		$(this).prev('.border').addClass('active');
+		$(this).next('.label').addClass('active');
+	});
+	
+	$('textarea').blur(function(){
+		if($(this).val()===''){
+			$(this).removeClass('active');
+			$(this).next('.label').removeClass('active');
+		}
+		$(this).prev('.border').removeClass('active');
+	});
+	
+});
+
+// Check for autofill
+
+$(window).on("load", function () {
+	
+	"use strict";
+	
+	//alert("ok");
+	
+	$("input").each(function() {
+		var element = $(this);
+		if(element.val()!==""){
+			element.next('.label').addClass('active');
+		}
+	});
+	
 });
