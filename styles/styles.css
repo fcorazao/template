@@ -746,6 +746,43 @@ nav.hor-nav {
     .btn.btn-info:hover {
       background: #ffca46; }
 
+.btn-simple {
+  -webkit-transition: border 0.15s ease-in-out;
+  -moz-transition: border 0.15s ease-in-out;
+  -ms-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out; }
+  .btn-simple.btn-main {
+    color: #967bdc;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-main:hover {
+      border-bottom: 1px solid #967bdc; }
+  .btn-simple.btn-accept {
+    color: #4fc0e8;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-accept:hover {
+      border-bottom: 1px solid #4fc0e8; }
+  .btn-simple.btn-save {
+    color: #48cfae;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-save:hover {
+      border-bottom: 1px solid #48cfae; }
+  .btn-simple.btn-cancel {
+    color: #ed5564;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-cancel:hover {
+      border-bottom: 1px solid #ed5564; }
+  .btn-simple.btn-back {
+    color: #aab2bd;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-back:hover {
+      border-bottom: 1px solid #aab2bd; }
+  .btn-simple.btn-info {
+    color: #ffce55;
+    border-bottom: 1px solid transparent; }
+    .btn-simple.btn-info:hover {
+      border-bottom: 1px solid #ffce55; }
+
 .text-left .btn {
   margin-right: 5px; }
   .text-left .btn:last-of-type {

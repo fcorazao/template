@@ -86,6 +86,24 @@
 	
 }
 
+// Simple button (colored link)
+
+.btn-simple {
+	
+	@include transition-custom(border 0.15s ease-in-out);
+	
+	@each $name,$color in $buttons_colors {
+		&.#{$name} {
+			color: $color;
+			border-bottom: 1px solid transparent;
+			&:hover {
+				border-bottom: 1px solid $color;
+			}
+		}
+	}
+	
+}
+
 // Aligment
 
 .text-left {
