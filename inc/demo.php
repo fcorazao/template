@@ -169,7 +169,7 @@ $columns[4]['add_filter'] = 0;
 $columns[4]['data']['data'] = 'date_secret';
 $columns[4]['data']['content'] = 'This is the final secret';
 $columns[5]['content'] = 'Variable';
-$columns[5]['class'] = 'dt-variable';
+$columns[5]['class'] = 'dt-variable hide-on-small';
 $columns[5]['add_filter'] = 0;
 $columns[5]['data']['data'] = 'date_secret';
 $columns[5]['data']['content'] = 'This is the final secret';
@@ -190,7 +190,7 @@ $data[0][3]['class'] = 'dt-md';
 $data[0][4]['content'] = 'Small column';
 $data[0][4]['class'] = 'dt-sm';
 $data[0][5]['content'] = 'Variable column';
-$data[0][5]['class'] = 'dt-variable';
+$data[0][5]['class'] = 'dt-variable hide-on-small';
 $data[0][6]['content'] = 'Buttons';
 $data[0][6]['class'] = 'dt-btns';
 $data[1][0]['content'] = '<label for="checkbox-7" class="radchk '.$table_style.'"><input type="checkbox" name="checkbox-7" id="checkbox-7" class="checkradio"></label>';
@@ -204,7 +204,7 @@ $data[1][3]['class'] = 'dt-md';
 $data[1][4]['content'] = 'They adapt';
 $data[1][4]['class'] = 'dt-sm';
 $data[1][5]['content'] = 'They really do! Specially this one cell...';
-$data[1][5]['class'] = 'dt-variable';
+$data[1][5]['class'] = 'dt-variable hide-on-small';
 $data[1][6]['content'] = '<a class="btn-view"><i class="fas fa-camera"></i></a>
 													<a class="btn-edit"><i class="fas fa-pen"></i></a>
 													<a class="btn-duplicate"><i class="fas fa-copy"></i></a>';
@@ -220,7 +220,7 @@ $data[2][3]['class'] = 'dt-md';
 $data[2][4]['content'] = 'Nice';
 $data[2][4]['class'] = 'dt-sm';
 $data[2][5]['content'] = 'And even the buttons are also styled by a class!';
-$data[2][5]['class'] = 'dt-variable';
+$data[2][5]['class'] = 'dt-variable hide-on-small';
 $data[2][6]['content'] = '<a class="btn-review"><i class="fas fa-edit"></i></a>
 													<a class="btn-delete"><i class="fas fa-times"></i></a>';
 $data[2][6]['class'] = 'dt-btns';
@@ -236,7 +236,7 @@ $data[3][3]['class'] = 'dt-md';
 $data[3][4]['content'] = 'Small column';
 $data[3][4]['class'] = 'dt-sm';
 $data[3][5]['content'] = 'Variable column';
-$data[3][5]['class'] = 'dt-variable';
+$data[3][5]['class'] = 'dt-variable hide-on-small';
 $data[3][6]['content'] = 'Buttons';
 $data[3][6]['class'] = 'dt-btns';
 $data[4][0]['content'] = '<label for="checkbox-10" class="radchk '.$table_style.'"><input type="checkbox" name="checkbox-10" id="checkbox-10" class="checkradio"></label>';
@@ -250,7 +250,7 @@ $data[4][3]['class'] = 'dt-md';
 $data[4][4]['content'] = 'They adapt';
 $data[4][4]['class'] = 'dt-sm';
 $data[4][5]['content'] = 'They really do! Specially this one cell...';
-$data[4][5]['class'] = 'dt-variable';
+$data[4][5]['class'] = 'dt-variable hide-on-small';
 $data[4][6]['content'] = '<a class="btn-view"><i class="fas fa-camera"></i></a>
 													<a class="btn-edit"><i class="fas fa-pen"></i></a>
 													<a class="btn-duplicate"><i class="fas fa-copy"></i></a>';
@@ -266,7 +266,7 @@ $data[5][3]['class'] = 'dt-md';
 $data[5][4]['content'] = 'Nice';
 $data[5][4]['class'] = 'dt-sm';
 $data[5][5]['content'] = 'And even the buttons are also styled by a class!';
-$data[5][5]['class'] = 'dt-variable';
+$data[5][5]['class'] = 'dt-variable hide-on-small';
 $data[5][6]['content'] = '<a class="btn-review"><i class="fas fa-edit"></i></a>
 													<a class="btn-delete"><i class="fas fa-times"></i></a>';
 $data[5][6]['class'] = 'dt-btns';
@@ -282,7 +282,7 @@ $data[6][3]['class'] = 'dt-md';
 $data[6][4]['content'] = 'Small column';
 $data[6][4]['class'] = 'dt-sm';
 $data[6][5]['content'] = 'Variable column';
-$data[6][5]['class'] = 'dt-variable';
+$data[6][5]['class'] = 'dt-variable hide-on-small';
 $data[6][6]['content'] = 'Buttons';
 $data[6][6]['class'] = 'dt-btns';
 $data[7][0]['content'] = '<label for="checkbox-13" class="radchk '.$table_style.'"><input type="checkbox" name="checkbox-13" id="checkbox-13" class="checkradio"></label>';
@@ -296,7 +296,7 @@ $data[7][3]['class'] = 'dt-md';
 $data[7][4]['content'] = 'They adapt';
 $data[7][4]['class'] = 'dt-sm';
 $data[7][5]['content'] = 'They really do! Specially this one cell...';
-$data[7][5]['class'] = 'dt-variable';
+$data[7][5]['class'] = 'dt-variable hide-on-small';
 $data[7][6]['content'] = '<a class="btn-view"><i class="fas fa-camera"></i></a>
 													<a class="btn-edit"><i class="fas fa-pen"></i></a>
 													<a class="btn-duplicate"><i class="fas fa-copy"></i></a>';
@@ -312,7 +312,7 @@ $data[8][3]['class'] = 'dt-md';
 $data[8][4]['content'] = 'Nice';
 $data[8][4]['class'] = 'dt-sm';
 $data[8][5]['content'] = 'And even the buttons are also styled by a class!';
-$data[8][5]['class'] = 'dt-variable';
+$data[8][5]['class'] = 'dt-variable hide-on-small';
 $data[8][6]['content'] = '<a class="btn-review"><i class="fas fa-edit"></i></a>
 													<a class="btn-delete"><i class="fas fa-times"></i></a>';
 $data[8][6]['class'] = 'dt-btns';
@@ -328,7 +328,7 @@ $data[9][3]['class'] = 'dt-md';
 $data[9][4]['content'] = 'Small column';
 $data[9][4]['class'] = 'dt-sm';
 $data[9][5]['content'] = 'Variable column';
-$data[9][5]['class'] = 'dt-variable';
+$data[9][5]['class'] = 'dt-variable hide-on-small';
 $data[9][6]['content'] = 'Buttons';
 $data[9][6]['class'] = 'dt-btns';
 $data[10][0]['content'] = '<label for="checkbox-16" class="radchk '.$table_style.'"><input type="checkbox" name="checkbox-16" id="checkbox-16" class="checkradio"></label>';
@@ -342,7 +342,7 @@ $data[10][3]['class'] = 'dt-md';
 $data[10][4]['content'] = 'They adapt';
 $data[10][4]['class'] = 'dt-sm';
 $data[10][5]['content'] = 'They really do! Specially this one cell...';
-$data[10][5]['class'] = 'dt-variable';
+$data[10][5]['class'] = 'dt-variable hide-on-small';
 $data[10][6]['content'] = '<a class="btn-view"><i class="fas fa-camera"></i></a>
 													<a class="btn-edit"><i class="fas fa-pen"></i></a>
 													<a class="btn-duplicate"><i class="fas fa-copy"></i></a>';
@@ -358,7 +358,7 @@ $data[11][3]['class'] = 'dt-md';
 $data[11][4]['content'] = 'Nice';
 $data[11][4]['class'] = 'dt-sm';
 $data[11][5]['content'] = 'And even the buttons are also styled by a class!';
-$data[11][5]['class'] = 'dt-variable';
+$data[11][5]['class'] = 'dt-variable hide-on-small';
 $data[11][6]['content'] = '<a class="btn-review"><i class="fas fa-edit"></i></a>
 													<a class="btn-delete"><i class="fas fa-times"></i></a>';
 $data[11][6]['class'] = 'dt-btns';
