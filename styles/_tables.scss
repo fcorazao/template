@@ -159,13 +159,21 @@ table.dt {
 
 .table-filters-row {
 	margin-bottom: 1%;
+	.dropdown {
+		margin: 0 0 3px 0;
+	}
+	@include respond-to('large') {
+		span.text {
+			display: none !important;
+		}
+	}
 }
 
 /* Table search */
 
 .table-search {
 	max-width: 250px !important;
-	width: 60% !important;
+	width: 55% !important;
 	margin-left: 3% !important;
 	@include respond-to('medium') {
 		width: 50% !important;

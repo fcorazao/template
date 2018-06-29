@@ -1,3 +1,30 @@
+
+.flex-for-height {
+	bottom: 0;
+	@include display-flex;
+}
+
+/* Layout */
+
+div.demo {
+	
+	padding: 40px;
+	margin: 30px 0;
+	border-radius: 10px;
+	border-collapse: collapse;
+	background: $color-light-grey;
+	@include box-shadow-raised;
+	
+	div.title {
+		margin: 10px 0 30px 0;
+	}
+	
+	div.subtitle {
+		margin: 20px 0;
+	}
+	
+}
+
 /* Color boxes */
 
 $box-width: 65px;

@@ -43,7 +43,7 @@ $max-width: 1280px;
 /* Breakpoints */
 
 $breakpoints: (
-  'tiny':   ( min-width:  767px ),
+  'tiny':   ( max-width:  560px ),
   'small':  ( max-width:  768px ),
   'medium': ( max-width:  992px ),
   'large':  ( max-width: 1200px )
@@ -91,12 +91,14 @@ $z-index: (
 	modal								: 10000,
 	modal-background		: 9999,
 	dropdown						: 200,
-	navigation					: 100,
+	navigation					: 150,
+	carousel						: 100,
 	footer							: 90,
 	triangle						: 60,
 	navigation-rainbow	: 50,
 	share-type					: 41,
 	share								: 40,
+	sidebar							: 10,
 );
 
 @function z-index($key) {
@@ -183,7 +185,18 @@ $background_colors : (
 	bk-save: $color-mint,
 	bk-cancel: $color-red,
 	bk-back: $color-medium-grey-2,
-	bk-info: $color-yellow
+	bk-info: $color-yellow,
+	bk-white: #FFF
+);
+
+$background_colors_gradients : (
+	bk-g-main: $color-purple-2,
+	bk-g-accept: $color-aqua,
+	bk-g-save: $color-mint,
+	bk-g-cancel: $color-red,
+	bk-g-back: $color-medium-grey-2,
+	bk-g-info: $color-yellow,
+	bk-g-white: #FFF
 );
 
 // Styling colors
@@ -194,6 +207,8 @@ $styles_colors : (
 	success: $color-mint,
 	warning: $color-yellow,
 	comment: $color-purple-2,
+	grey: $color-dark-grey,
+	dark: $color-dark-grey-2,
 	corp-main: $color-corp-main,
 	corp-sec: $color-corp-sec,
 	corp-alt: $color-corp-alt
@@ -212,6 +227,12 @@ $status_colors : (
 /* Backgrounds */
 
 @each $name,$color in $background_colors {
+	.#{$name} {
+		background: $color;
+	}
+}
+
+@each $name,$color in $background_colors_gradients {
 	.#{$name} {
 		background: linear-gradient(60deg, $color, darken($color,15%));
 	}

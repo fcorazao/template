@@ -1,4 +1,4 @@
-/* Navigation */
+/* Horizontal Navigation */
 
 $navigation-height: 50px;
 
@@ -9,6 +9,12 @@ nav.hor-nav {
 	padding: 0 10px;
 	color: #FFF;
 	@include box-shadow-bottom;
+	z-index: z-index('navigation');
+	
+	&.simple {
+		margin-bottom: 0;
+		@include no-shadow;
+	}
 	
 	// Types
 	
@@ -190,6 +196,23 @@ nav.hor-nav {
     }
   }
 	
+	&.clear {
+		background: #FFF;
+		ul li a {
+			color: #666;
+			&:hover {
+				background: rgba(0,0,0,0.1);
+			}
+		}
+		a.inner {
+			&:hover {
+				color: #333;
+				background: rgba(0,0,0,0.1);
+				@include box-shadow-raised-lower;
+			}
+		}
+	}
+	
 	// Sizes
 	
 	&.short {
@@ -215,6 +238,202 @@ nav.hor-nav {
 			padding: 0 15px;
 			line-height: $navigation-height - 10 + 10;
 		}
+	}
+	
+}
+
+/* Vertical Navigation */
+
+$navigation-width: 200px;
+
+nav.ver-nav {
+	
+	position: relative;
+	width: $navigation-width;
+	background: $color-aqua-2;
+	z-index: z-index('navigation');
+	
+	@include transition(0.25s);
+	@include soft-shadow;
+	
+	// Menu
+	
+	ul {
+		
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		@include clearfix;
+		
+		li {
+			
+			position: relative;
+			margin: 0;
+			padding: 0;
+			border-bottom: 1px solid $color-aqua;
+			
+			a {
+				width: 100%;
+				height: 50px;
+				color: #FFF;
+				line-height: 50px;
+				background: $color-aqua-2;
+				cursor: pointer;
+				display: block;
+				overflow: hidden;
+				@include transition(0.2s);
+				&:hover {
+					background: darken($color-aqua-2,5%);
+				}
+				
+				span.icon {
+					width: 50px;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				
+			}
+			
+			&.active {
+				a {
+					cursor: default;
+					background: darken($color-aqua-2,6%);
+				}
+			}
+			
+			ul {
+				position: absolute;
+				left: 100%;
+				top: 0;
+				width: 200px;
+				display: none;
+				li {
+					position: relative;
+					&:nth-of-type(1){
+						.arrow {
+							position: absolute;
+							top: 15px;
+							right: 100%;
+							width: 0; 
+							height: 0; 
+							border-top: 10px solid transparent;
+							border-bottom: 10px solid transparent;
+							border-right: 10px solid darken($color-aqua-2,3%);
+							display: block;
+						}
+					}
+					a {
+						padding-left: 15px;
+					}
+				}
+			}
+			
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+			
+		}
+		
+	}
+	
+	// Extra padding for collapsible button
+	
+	> ul.is-collapsible {
+		padding: 0 0 50px 0;
+	}
+	
+	// Collapse button
+	
+	a.collapse-btn {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		color: #FFF;
+		cursor: pointer;
+	}
+	
+	// Open
+	
+	&.open {
+		width: 200px;
+	}
+	
+	// Closed
+	
+	&.closed {
+		width: 50px;
+	}
+	
+	// Colors
+	
+  @each $name,$color in $styles_colors {
+    &.#{$name} {
+			background: $color;
+			ul{
+				li {
+					border-bottom: 1px solid darken($color,6%);
+					a {
+						background: $color;
+						&:hover {
+							background: darken($color,5%);
+						}
+					}
+					&.active {
+						a {
+							background: darken($color,6%);
+						}
+					}
+					ul {
+						background: darken($color,3%);
+						.arrow {
+							border-right: 10px solid darken($color,3%);
+						}
+						li {
+							background: darken($color,3%);
+							&:nth-of-type(1){
+								.arrow {
+									border-right: 10px solid darken($color,3%);
+								}
+							}
+							&:hover {
+								&:nth-of-type(1){
+									.arrow {
+										border-right: 10px solid darken($color,6%);
+									}
+								}
+							}
+							a {
+								background: darken($color,3%);
+							}
+						}
+					}
+				}
+			}
+			a.collapse-btn {
+				background: $color;
+				&:hover {
+					background: darken($color,5%);
+				}
+			}
+    }
+  }
+	
+	// Over aside
+	
+	&.over-aside {
+		background: none !important;
+		@include no-shadow;
 	}
 	
 }

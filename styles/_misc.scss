@@ -149,6 +149,8 @@ article.typography {
 	}
 }
 
+
+
 /* Images */
 
 figure {
@@ -259,6 +261,8 @@ figure {
 	
 }
 
+
+
 /* Modal */
 
 #modal {
@@ -323,6 +327,8 @@ figure {
 	@include z-index(modal-background);
 	
 }
+
+
 
 /* Tooltips */
 
@@ -444,6 +450,8 @@ $triangle-size: 10px;
 	
 }
 
+
+
 /* Datepicker */
 
 #ui-datepicker-div {
@@ -486,13 +494,22 @@ $triangle-size: 10px;
 	}
 }
 
+
+
 /* Carousel */
 
 #carousel {
-	max-width: 800px;
+	
 	height: auto;
 	margin: 0 auto;
+	z-index: z-index('carousel');
+	
+	&.full-width {
+		max-width: 100%;
+	}
+	
 	@include box-shadow-raised;
+	
 	.carousel {
 		.slick-slide {
 			position: relative;
@@ -564,9 +581,21 @@ $triangle-size: 10px;
 			}
 		}
 	}
+	
 }
 
+
+
 // Dropdown
+
+.button-dropdown {
+	&.align-right {
+		> div, > ul {
+			left: auto;
+			right: 0;
+		}
+	}
+}
 
 .button-dropdown,
 .dropdown {

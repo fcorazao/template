@@ -73,6 +73,10 @@ div.dataTables_paginate {
 			background: $color-mint;
 			@include soft-shadow;
 		}
+		&.disabled {
+			opacity: 0;
+			cursor: default;
+		}
 		&:hover {
 			background: $color-light-grey-2;
 			@include soft-shadow;

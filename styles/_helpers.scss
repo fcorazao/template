@@ -20,8 +20,41 @@
 .no-shadow {
 	@include no-shadow;
 }
+
+/* Margins */
+
 .no-margin {
 	margin: 0 !important;
+}
+.margin-top {
+	margin-top: 3% !important;
+}
+.margin-right {
+	margin-right: 3% !important;
+}
+.margin-bottom {
+	margin-bottom: 3% !important;
+}
+.margin-left {
+	margin-left: 3% !important;
+}
+
+/* Paddings */
+
+.no-padding {
+	padding: 0 !important;
+}
+.padding-top {
+	padding-top: 3% !important;
+}
+.padding-right {
+	padding-right: 3% !important;
+}
+.padding-bottom {
+	padding-bottom: 3% !important;
+}
+.padding-left {
+	padding-left: 3% !important;
 }
 
 /* jQuery Fixes */
