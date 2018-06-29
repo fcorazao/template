@@ -149,7 +149,7 @@ $(function(){
 
 $(function(){
 	"use strict";
-	$(".collapse_sidebar").on( "click", function() {
+	$(".collapse-btn").on( "click", function() {
 		var this_id = $(this).data('id');
 		console.log(this_id);
 		$(this).find("svg").toggleClass('fa-caret-right').toggleClass('fa-caret-left');
