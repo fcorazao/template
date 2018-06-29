@@ -37,19 +37,34 @@ function seoUrl($string){
  * 
  * 
  * 
- * 
- * 
- * 
+ * Ratio options
+ * .ct-square	1
+ * .ct-minor-second	15:16
+ * .ct-major-second	8:9
+ * .ct-minor-third	5:6
+ * .ct-major-third	4:5
+ * .ct-perfect-fourth	3:4
+ * .ct-perfect-fifth	2:3
+ * .ct-minor-sixth	5:8
+ * .ct-golden-section	1:1.618
+ * .ct-major-sixth	3:5
+ * .ct-minor-seventh	9:16
+ * .ct-major-seventh	8:15
+ * .ct-octave	1:2
+ * .ct-major-tenth	2:5
+ * .ct-major-eleventh	3:8
+ * .ct-major-twelfth	1:3
+ * .ct-double-octave	1:4
  * 
  */
 
-function build_chart($id=NULL,$type,$labels,$series,$style){ //,$data,$active='active',$view='',$icon='',$style='style-info',$show='20'){
+function build_chart($id=NULL,$type,$labels,$series,$style,$ratio){ //,$data,$active='active',$view='',$icon='',$style='style-info',$show='20'){
 	
 	?>
 	
-	<div id="<?php echo $id; ?>" class="ct-perfect-fourth <?php echo $style; ?>"></div>
+	<div id="<?php echo $id; ?>" class="<?php echo $ratio.' '.$style; ?>"></div>
 	
-	<?php include_once('inc/chartist-scripts.php'); ?>
+	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/template/inc/chartist-scripts.php'); ?>
 	
 	<?php
 	switch($type){
@@ -103,6 +118,8 @@ function build_chart($id=NULL,$type,$labels,$series,$style){ //,$data,$active='a
 		case 'bar-stacked':
 		?>
 		<script>
+		chart_rezise.check();
+		console.log('created chart');
 		new Chartist.Bar('#<?php echo $id; ?>', {
 			labels: [<?php echo $labels; ?>],
 			series: [<?php echo $series; ?>]
@@ -139,52 +156,6 @@ function build_chart($id=NULL,$type,$labels,$series,$style){ //,$data,$active='a
 		<?php
 		break;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	
-Container class	Ratio
-.ct-square	1
-.ct-minor-second	15:16
-.ct-major-second	8:9
-.ct-minor-third	5:6
-.ct-major-third	4:5
-.ct-perfect-fourth	3:4
-.ct-perfect-fifth	2:3
-.ct-minor-sixth	5:8
-.ct-golden-section	1:1.618
-.ct-major-sixth	3:5
-.ct-minor-seventh	9:16
-.ct-major-seventh	8:15
-.ct-octave	1:2
-.ct-major-tenth	2:5
-.ct-major-eleventh	3:8
-.ct-major-twelfth	1:3
-.ct-double-octave	1:4
-	*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	?>
-
-		
-	
-	<?php
 	
 }
 
@@ -224,7 +195,7 @@ function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='
 			<div class="col-8">
 				
 				<div class="dropdown active <?php echo $style; ?> no-shadow">
-					<a class="btn btn-back btn-md btn-text-icon">Show <span class="amount"><?php echo $show; ?></span><i class="fas fa-chevron-down fa-fw"></i></a>
+					<a class="btn btn-back btn-md btn-text-icon"><span class="text">Show</span> <span class="amount"><?php echo $show; ?></span><i class="fas fa-chevron-down fa-fw"></i></a>
 					<ul class="with-icons">
 						<li class="filter_count text-only <?php if($show=='5'){ echo 'active'; } ?>" data-val="5">5</li>
 						<li class="filter_count text-only <?php if($show=='10'){ echo 'active'; } ?>" data-val="10">10</li>
@@ -237,7 +208,7 @@ function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='
 				<?php foreach($columns as $key => $value){ if($value['add_filter']){ ?>
 				
 				<div class="dropdown active <?php echo $style; ?> no-shadow">
-					<a class="btn btn-back btn-md btn-text-icon">Filter <?php echo $value['content']; ?>: <span class="filter-col-<?php echo $key; ?>">All</span><i class="fas fa-chevron-down fa-fw"></i></a>
+					<a class="btn btn-back btn-md btn-text-icon"><span class="text">Filter</span> <?php echo $value['content']; ?>: <span class="filter-col-<?php echo $key; ?>">All</span><i class="fas fa-chevron-down fa-fw"></i></a>
 					<ul class="with-icons">
 						<li class="filter_column" data-col="3" data-val="allergies"><span><i class="fas fa-check fa-fw"></i></span>Allergies</li>
 						<li class="filter_column" data-col="3" data-val="ambulance"><span><i class="fas fa-times fa-fw"></i></span>Ambulance</li>
@@ -252,7 +223,7 @@ function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='
 				
 			</div>
 			<div class="col-4 text-right">
-				<div class="button-dropdown <?php echo $style; ?> no-shadow custom_buttons">
+				<div class="button-dropdown <?php echo $style; ?> no-shadow custom_buttons align-right">
 					<a class="btn btn-back btn-md btn-text-icon no-shadow">Export <i class="fas fa-chevron-down fa-fw"></i></a>
 
 				</div>
@@ -290,7 +261,7 @@ function build_table($id='dt',$area=NULL,$columns,$data,$active='active',$view='
 		
 	</form>
 	
-	<?php include_once('inc/datatables-scripts.php'); ?>
+	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/template/inc/datatables-scripts.php'); ?>
 	
 	<script>
 	
@@ -616,10 +587,14 @@ function delete_row($id,$table){
  * 
  */
 
-function build_navigation($style,$type,$size,$items,$print=true,$title=''){
+function build_navigation($style,$type,$size,$items,$print=true,$title='',$simple=false){
+	
+	if($simple){
+		$simple = 'simple';
+	}
 	
 	// Open the nav
-	$nav = '<nav class="hor-nav '.$style.' '.$type.' '.' '.$size.'">';
+	$nav = '<nav class="hor-nav '.$style.' '.$type.' '.' '.$size.' '.$simple.'">';
 	
 	// Check if it's icon and print the title
 	if($type==='icon'){ $nav .= '<span class="nav-title">'.$title.'</span>'; }
@@ -741,103 +716,110 @@ function build_navigation($style,$type,$size,$items,$print=true,$title=''){
  * 
  */
 
-function build_vertical_navigation($style='info',$open='open',$collapsible=true,$items,$print=true,$current='home',$id){
+function build_vertical_navigation($style='info',$open='open',$collapsible=true,$items,$print=true,$current='home',$id,$classes=NULL){
 	
 	global $TheSiteURL;
 	
-	// Start the sidebar
-	$nav = '<aside id="'.$id.'" class="nav '.$open.' '.$style.'">';
-	
 	// Start the navigation
-	$nav .= '<nav id="nav">';
-	
-	// Start the list
-	$nav .= '<ul>';
-	
-	// Build list of icons
-	foreach($items as $key => $value){
+	$nav = '<nav id="'.$id.'" class="ver-nav '.$open.' '.$style.' '.$classes.'">';
+
+		// Start the list
+		$nav .= '<ul';
 		
-		// Check for type of link and if it's internal add forward slash
-		if($value['Link']!=''){ $link_slash = '/'; }else{ $link_slash = ''; }
-		
-		// Check for current link or home link to add the active class to the item and start the item
-		if($current==$value['Link']){
-			$nav .= '<li class="active">';
-		}else{
-			$nav .= '<li>';
+		if($collapsible){
+			$nav .= ' class="is-collapsible"';
 		}
 		
-		// Check for Target
-		$value['Blank'] ? $where = '_blank' : $where = '_self';
-				
-		// Build the button
-		if($value['Link']=='home'){
-			$nav .= '<a href="'.$TheSiteURL.$link_slash.'" target="'.$where.'">';
-		}elseif($value['Dropdown']!==0){
-			$nav .= '<a>';
-		}else{
-			$nav .= '<a href="'.$TheSiteURL.$value['Link'].$link_slash.'" target="'.$where.'">';
-		}
+		$nav .= '>';
 		
-		$nav .= '<span class="icon"><i class="far fa-'.$value['Icon'].' fa-fw"></i></span>';
-		$nav .= $value['Name'];
-		$nav .= '</a>';
-		
-		// Check for Dropdown
-		if($value['Dropdown']!==0){
-			
-			// Start the list
-			$nav .= '<ul><span class="arrow"></span>';
-			
-			// Build dropdown menu
-			foreach($value['Items'] as $k => $v){
-				
-				// Check for type of link and if it's internal add forward slash
-				if($v['Link']!=''){ $link_slash = '/'; }else{ $link_slash = ''; }
-				
-				// Check for current link or home link to add the active class to the item and start the item
-				if($current==$v['Link']){
-					$nav .= '<li class="active">';
-				}else{
-					$nav .= '<li>';
-				}
-				
-				// Check for Target
-				$v['Blank'] ? $where = '_blank' : $where = '_self';
-				
-				// Build the button
-				$nav .= '<a href="'.$TheSiteURL.$v['Link'].$link_slash.'" target="'.$where.'">';
-				$nav .= $v['Name'];
-				$nav .= '</a>';
-				
-				// Close the list
-				$nav .= '</li>';
-				
+		// Build list of icons
+		foreach($items as $key => $value){
+
+			// Check for type of link and if it's internal add forward slash
+			if($value['Link']!=''){ $link_slash = '/'; }else{ $link_slash = ''; }
+
+			// Check for current link or home link to add the active class to the item and start the item
+			if($current==$value['Link']){
+				$nav .= '<li class="active">';
+			}else{
+				$nav .= '<li>';
 			}
-			
-			// Close the list
-			$nav .= '</ul>';
-			
+
+			// Check for Target
+			$value['Blank'] ? $where = '_blank' : $where = '_self';
+
+			// Build the button
+			if($value['Link']=='home'){
+				$nav .= '<a href="'.$TheSiteURL.$link_slash.'" target="'.$where.'">';
+			}elseif($value['Dropdown']!==0){
+				$nav .= '<a>';
+			}else{
+				$nav .= '<a href="'.$TheSiteURL.$value['Link'].$link_slash.'" target="'.$where.'">';
+			}
+
+			$nav .= '<span class="icon"><i class="far fa-'.$value['Icon'].' fa-fw"></i></span>';
+			$nav .= $value['Name'];
+			$nav .= '</a>';
+
+			// Check for Dropdown
+			if($value['Dropdown']!==0){
+
+				// Start the list
+				$nav .= '<ul>';
+
+				$first = true;
+
+				// Build dropdown menu
+				foreach($value['Items'] as $k => $v){
+
+					// Check for type of link and if it's internal add forward slash
+					if($v['Link']!=''){ $link_slash = '/'; }else{ $link_slash = ''; }
+
+					// Check for current link or home link to add the active class to the item and start the item
+					if($current==$v['Link']){
+						$nav .= '<li class="active">';
+					}else{
+						$nav .= '<li>';
+					}
+
+					if($first){
+						$nav .= '<span class="arrow"></span>';
+						$first = false;
+					}
+
+					// Check for Target
+					$v['Blank'] ? $where = '_blank' : $where = '_self';
+
+					// Build the button
+					$nav .= '<a href="'.$TheSiteURL.$v['Link'].$link_slash.'" target="'.$where.'">';
+					$nav .= $v['Name'];
+					$nav .= '</a>';
+
+					// Close the list
+					$nav .= '</li>';
+
+				}
+
+				// Close the list
+				$nav .= '</ul>';
+
+			}
+
+			// Close the item
+			$nav .= '</li>';
+
 		}
-		
-		// Close the item
-		$nav .= '</li>';
-		
-	}
-	
-	// Close the list
-	$nav .= '</ul>';
-	
+
+		// Close the list
+		$nav .= '</ul>';
+
+		// Add collapsible button if it's set to true
+		if($collapsible){
+			$nav .= '<a class="collapse-btn" data-id="'.$id.'"><span class="icon"><i class="far fa-caret-right fa-fw"></i></span></a>';
+		}
+
 	// Close the navigation
 	$nav .= '</nav>';
-	
-	// Add collapsible button if it's set to true
-	if($collapsible){
-		$nav .= '<ul class="collapse"><li><a class="collapse_sidebar" data-id="'.$id.'"><span class="icon"><i class="far fa-caret-right fa-fw"></i></span></a></li></ul>';
-	}
-	
-	// Close sidebar
-	$nav .= '</aside>';
 	
 	// Print the menu if it's set to true
 	if($print){ echo $nav; }else{ return $nav; }
